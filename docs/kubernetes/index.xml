@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on Jager&#39;s Note</title>
-    <link>/docs/kubernetes/</link>
+    <link>note/docs/kubernetes/</link>
     <description>Recent content in Kubernetes on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/docs/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes服务部署步骤</title>
-      <link>/docs/kubernetes/kubernetes-setup/</link>
+      <link>note/docs/kubernetes/kubernetes-setup/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/kubernetes/kubernetes-setup/</guid>
+      <guid>note/docs/kubernetes/kubernetes-setup/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍Kubernetes服务部署步骤&lt;/p&gt;
 &lt;/blockquote&gt;</description>

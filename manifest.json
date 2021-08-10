@@ -1,14 +1,14 @@
 {
   "name": "Jager's Note",
   "short_name": "Jager's Note",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/note/",
+  "scope": "/note/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/note/favicon.svg",
       "sizes": "512x512"
     }
   ]

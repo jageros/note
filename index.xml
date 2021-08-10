@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on Jager&#39;s Note</title>
-    <link>/</link>
+    <link>note/</link>
     <description>Recent content in Introduction on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go第三方库列表</title>
-      <link>/docs/golang/go-pkg/</link>
+      <link>note/docs/golang/go-pkg/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/go-pkg/</guid>
+      <guid>note/docs/golang/go-pkg/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
 这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找&lt;/p&gt;
@@ -20,10 +20,10 @@
     
     <item>
       <title>MongoDB的一些操作记录</title>
-      <link>/docs/database/mongodb/</link>
+      <link>note/docs/database/mongodb/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/database/mongodb/</guid>
+      <guid>note/docs/database/mongodb/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文记录MongoDB使用过程中，因需求需要进行一些不常用的操作，如创建用户，导出数据，数据备份恢复等运维层面的技术知识，
 后续有遇到继续往文章后面添加，以备不时之需，可来此进行查阅&lt;/p&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Nginx命令操作记录</title>
-      <link>/docs/nginx/nginxop/</link>
+      <link>note/docs/nginx/nginxop/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/nginxop/</guid>
+      <guid>note/docs/nginx/nginxop/</guid>
       <description> 重新load配置 nginx -s reload 热部署   先替换nginx二进制文件，然后发送kill -USR2 进程号，会启动新master 的进程
 然后向老进程发送信号让其优雅的关闭work进程 kill -WINCH 进程号 , 老的master进程会保留防止回退
  </description>
@@ -43,10 +43,10 @@
     
     <item>
       <title>其他记录</title>
-      <link>/docs/other/mac/</link>
+      <link>note/docs/other/mac/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/other/mac/</guid>
+      <guid>note/docs/other/mac/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;其他杂乱的操作记录，供必要时查阅&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -54,10 +54,10 @@
     
     <item>
       <title>参考博客文献</title>
-      <link>/docs/material/reference/</link>
+      <link>note/docs/material/reference/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/material/reference/</guid>
+      <guid>note/docs/material/reference/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文收集一下博客文献的链接，供学习参考&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -65,10 +65,10 @@
     
     <item>
       <title>面经</title>
-      <link>/docs/interview/interview/</link>
+      <link>note/docs/interview/interview/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/interview/interview/</guid>
+      <guid>note/docs/interview/interview/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;这里记录我一直以来的面试经历&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -76,10 +76,10 @@
     
     <item>
       <title>面试准备</title>
-      <link>/docs/interview/plan/</link>
+      <link>note/docs/interview/plan/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/interview/plan/</guid>
+      <guid>note/docs/interview/plan/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;这里记录我一直以来的面试准备知识点，会不断优化迭代&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -87,10 +87,10 @@
     
     <item>
       <title>面试灵魂拷问</title>
-      <link>/docs/interview/faq/</link>
+      <link>note/docs/interview/faq/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/interview/faq/</guid>
+      <guid>note/docs/interview/faq/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文收集一些面试golang服务端开发的问题和答案，以及一些知识点的参考文章等，让即将面试的小伙伴有佛脚可抱。
 包括但不限于Linux， golang， 数据库， nginx， etcd， Redis， http， 消息队列，等等。&lt;/p&gt;
@@ -99,10 +99,10 @@
     
     <item>
       <title>channel注意事项</title>
-      <link>/docs/golang/channel/</link>
+      <link>note/docs/golang/channel/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/channel/</guid>
+      <guid>note/docs/golang/channel/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;channel是go语言编程中必不可少的元素，但对不同状态的channel作read，write和close操作会有不同的结果，
 稍有操作不当，将导致系统 panic，所以本文介绍了channel不同状态的操作结果&lt;/p&gt;
@@ -111,10 +111,10 @@
     
     <item>
       <title>Elasticsearch部署</title>
-      <link>/docs/elasticsearch/elasticsearch-install/</link>
+      <link>note/docs/elasticsearch/elasticsearch-install/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/elasticsearch/elasticsearch-install/</guid>
+      <guid>note/docs/elasticsearch/elasticsearch-install/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Elasticsearch是一个开源的分布式、RESTful 风格的搜索和数据分析引擎，它的底层是开源库Apache Lucene。
 Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库——无论是开源还是私有，但它也仅仅只是一个库。
@@ -124,10 +124,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>golang sync包的使用</title>
-      <link>/docs/golang/sync/</link>
+      <link>note/docs/golang/sync/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/sync/</guid>
+      <guid>note/docs/golang/sync/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍go sync包的用法示例&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -135,10 +135,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>go服务端开发学习指南</title>
-      <link>/docs/golang/study-line/</link>
+      <link>note/docs/golang/study-line/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/study-line/</guid>
+      <guid>note/docs/golang/study-line/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍基于go语言的服务端程序开发学习指南，根据列举的知识点自行学习，所列知识点都是开发基础必备技术栈。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -146,10 +146,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>go程序优雅退出</title>
-      <link>/docs/golang/grace-exit/</link>
+      <link>note/docs/golang/grace-exit/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/grace-exit/</guid>
+      <guid>note/docs/golang/grace-exit/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍go程序借助系统信号主动停止服务的实现，即程序优雅退出&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -157,10 +157,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>go程序发布监听事件库</title>
-      <link>/docs/golang/eventhub/</link>
+      <link>note/docs/golang/eventhub/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/eventhub/</guid>
+      <guid>note/docs/golang/eventhub/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;这是一个开源的用于golang程序内部发布和监听事件的package，
 其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，
@@ -170,10 +170,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>Linux不常用操作记录</title>
-      <link>/docs/linux/operate-recode/</link>
+      <link>note/docs/linux/operate-recode/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/linux/operate-recode/</guid>
+      <guid>note/docs/linux/operate-recode/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文记录一些Linux的不常用且难以记忆的命令，供以后需要使用可以翻阅&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -181,10 +181,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>Nginx IP 限流</title>
-      <link>/docs/nginx/nginx-limit/</link>
+      <link>note/docs/nginx/nginx-limit/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/nginx-limit/</guid>
+      <guid>note/docs/nginx/nginx-limit/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;通过对同一IP进行限流，在一定程度上可以防止应用层DDOS攻击。本文介绍 Nginx对同一IP限流的配置&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -192,10 +192,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>nginx反向代理</title>
-      <link>/docs/nginx/proxy/</link>
+      <link>note/docs/nginx/proxy/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/proxy/</guid>
+      <guid>note/docs/nginx/proxy/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;利用Nginx的反向代理可以实现多个域名指向同个服务器的不同网站，本文将介绍如何配置&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -203,10 +203,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>queue golang实现</title>
-      <link>/docs/golang/queue/</link>
+      <link>note/docs/golang/queue/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/queue/</guid>
+      <guid>note/docs/golang/queue/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍go语言queue库的原理，代码解析以及使用方法&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -214,10 +214,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>批量图片压缩go实现</title>
-      <link>/docs/golang/tinypng/</link>
+      <link>note/docs/golang/tinypng/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/tinypng/</guid>
+      <guid>note/docs/golang/tinypng/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;基于golang和tinypng的图片批量压缩工具实现&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -225,10 +225,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>生成x个随机数</title>
-      <link>/docs/algorithm/random-n-int/</link>
+      <link>note/docs/algorithm/random-n-int/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/algorithm/random-n-int/</guid>
+      <guid>note/docs/algorithm/random-n-int/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;需求：生成x个随机数，要求这个x个随机数的和为y， 且随机数的最大值小于平均数的3倍，最小值大于0，例如：5个和为10的随机数避免出现6，1，1，1，1的情况。
 【使用场景：游戏中卡牌包开包时随机出现卡牌质量的分布】&lt;br&gt;
@@ -238,10 +238,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>零碎笔记</title>
-      <link>/docs/golang/other-recode/</link>
+      <link>note/docs/golang/other-recode/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/golang/other-recode/</guid>
+      <guid>note/docs/golang/other-recode/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文记录一些golang程序的一些简短的要点&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -249,10 +249,10 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
     
     <item>
       <title>Kubernetes服务部署步骤</title>
-      <link>/docs/kubernetes/kubernetes-setup/</link>
+      <link>note/docs/kubernetes/kubernetes-setup/</link>
       <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/kubernetes/kubernetes-setup/</guid>
+      <guid>note/docs/kubernetes/kubernetes-setup/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍Kubernetes服务部署步骤&lt;/p&gt;
 &lt;/blockquote&gt;</description>

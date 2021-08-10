@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Jager&#39;s Note</title>
-    <link>/docs/nginx/</link>
+    <link>note/docs/nginx/</link>
     <description>Recent content in Nginx on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/docs/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx命令操作记录</title>
-      <link>/docs/nginx/nginxop/</link>
+      <link>note/docs/nginx/nginxop/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/nginxop/</guid>
+      <guid>note/docs/nginx/nginxop/</guid>
       <description> 重新load配置 nginx -s reload 热部署   先替换nginx二进制文件，然后发送kill -USR2 进程号，会启动新master 的进程
 然后向老进程发送信号让其优雅的关闭work进程 kill -WINCH 进程号 , 老的master进程会保留防止回退
  </description>
@@ -19,10 +19,10 @@
     
     <item>
       <title>Nginx IP 限流</title>
-      <link>/docs/nginx/nginx-limit/</link>
+      <link>note/docs/nginx/nginx-limit/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/nginx-limit/</guid>
+      <guid>note/docs/nginx/nginx-limit/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;通过对同一IP进行限流，在一定程度上可以防止应用层DDOS攻击。本文介绍 Nginx对同一IP限流的配置&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -30,10 +30,10 @@
     
     <item>
       <title>nginx反向代理</title>
-      <link>/docs/nginx/proxy/</link>
+      <link>note/docs/nginx/proxy/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/nginx/proxy/</guid>
+      <guid>note/docs/nginx/proxy/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;利用Nginx的反向代理可以实现多个域名指向同个服务器的不同网站，本文将介绍如何配置&lt;/p&gt;
 &lt;/blockquote&gt;</description>

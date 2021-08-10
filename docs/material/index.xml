@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>学习资料 on Jager&#39;s Note</title>
-    <link>/docs/material/</link>
+    <link>note/docs/material/</link>
     <description>Recent content in 学习资料 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/material/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/docs/material/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>参考博客文献</title>
-      <link>/docs/material/reference/</link>
+      <link>note/docs/material/reference/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/material/reference/</guid>
+      <guid>note/docs/material/reference/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文收集一下博客文献的链接，供学习参考&lt;/p&gt;
 &lt;/blockquote&gt;</description>

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elasticsearch on Jager&#39;s Note</title>
-    <link>/tags/elasticsearch/</link>
+    <link>note/tags/elasticsearch/</link>
     <description>Recent content in elasticsearch on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elasticsearch部署</title>
-      <link>/docs/elasticsearch/elasticsearch-install/</link>
+      <link>note/docs/elasticsearch/elasticsearch-install/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/docs/elasticsearch/elasticsearch-install/</guid>
+      <guid>note/docs/elasticsearch/elasticsearch-install/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Elasticsearch是一个开源的分布式、RESTful 风格的搜索和数据分析引擎，它的底层是开源库Apache Lucene。
 Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库——无论是开源还是私有，但它也仅仅只是一个库。

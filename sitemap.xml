@@ -2,192 +2,192 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/docs/linux/</loc>
+    <loc>note/docs/linux/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/</loc>
+    <loc>note/docs/golang/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/database/</loc>
+    <loc>note/docs/database/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/nginx/</loc>
+    <loc>note/docs/nginx/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/etcd/</loc>
+    <loc>note/docs/etcd/</loc>
   </url><url>
-    <loc>/docs/queue/</loc>
+    <loc>note/docs/queue/</loc>
   </url><url>
-    <loc>/docs/elasticsearch/</loc>
+    <loc>note/docs/elasticsearch/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/kubernetes/</loc>
+    <loc>note/docs/kubernetes/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/algorithm/</loc>
+    <loc>note/docs/algorithm/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/interview/</loc>
+    <loc>note/docs/interview/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/material/</loc>
+    <loc>note/docs/material/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/other/</loc>
+    <loc>note/docs/other/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/life/</loc>
+    <loc>note/docs/life/</loc>
   </url><url>
-    <loc>/docs/</loc>
+    <loc>note/docs/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/go/</loc>
+    <loc>note/tags/go/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/go-pkg/</loc>
+    <loc>note/docs/golang/go-pkg/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>note/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/mongodb/</loc>
+    <loc>note/tags/mongodb/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/database/mongodb/</loc>
+    <loc>note/docs/database/mongodb/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/nginx/</loc>
+    <loc>note/tags/nginx/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/nginx/nginxop/</loc>
+    <loc>note/docs/nginx/nginxop/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>note/tags/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/other/mac/</loc>
+    <loc>note/docs/other/mac/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/material/reference/</loc>
+    <loc>note/docs/material/reference/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
+    <loc>note/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
+    <loc>note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E9%9D%A2%E7%BB%8F/</loc>
+    <loc>note/tags/%E9%9D%A2%E7%BB%8F/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/interview/interview/</loc>
+    <loc>note/docs/interview/interview/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</loc>
+    <loc>note/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/interview/plan/</loc>
+    <loc>note/docs/interview/plan/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/interview/faq/</loc>
+    <loc>note/docs/interview/faq/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</loc>
+    <loc>note/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/channel/</loc>
+    <loc>note/tags/channel/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/channel/</loc>
+    <loc>note/docs/golang/channel/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/elasticsearch/</loc>
+    <loc>note/tags/elasticsearch/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/elasticsearch/elasticsearch-install/</loc>
+    <loc>note/docs/elasticsearch/elasticsearch-install/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/sync/</loc>
+    <loc>note/docs/golang/sync/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/study-line/</loc>
+    <loc>note/docs/golang/study-line/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/grace-exit/</loc>
+    <loc>note/docs/golang/grace-exit/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/eventhub/</loc>
+    <loc>note/docs/golang/eventhub/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
+    <loc>note/tags/linux/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/linux/operate-recode/</loc>
+    <loc>note/docs/linux/operate-recode/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/nginx/nginx-limit/</loc>
+    <loc>note/docs/nginx/nginx-limit/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/nginx/proxy/</loc>
+    <loc>note/docs/nginx/proxy/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/queue/</loc>
+    <loc>note/tags/queue/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/queue/</loc>
+    <loc>note/docs/golang/queue/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/sync/</loc>
+    <loc>note/tags/sync/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/tinyPng/</loc>
+    <loc>note/tags/tinyPng/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>note/tags/%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</loc>
+    <loc>note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
+    <loc>note/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
+    <loc>note/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
+    <loc>note/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/tinypng/</loc>
+    <loc>note/docs/golang/tinypng/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
+    <loc>note/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
+    <loc>note/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/algorithm/random-n-int/</loc>
+    <loc>note/docs/algorithm/random-n-int/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>note/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E9%99%90%E6%B5%81/</loc>
+    <loc>note/tags/%E9%99%90%E6%B5%81/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</loc>
+    <loc>note/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/golang/other-recode/</loc>
+    <loc>note/docs/golang/other-recode/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/k8s/</loc>
+    <loc>note/tags/k8s/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/docs/kubernetes/kubernetes-setup/</loc>
+    <loc>note/docs/kubernetes/kubernetes-setup/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>note/categories/</loc>
   </url>
 </urlset>
