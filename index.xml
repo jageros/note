@@ -129,7 +129,7 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
       
       <guid>https://jageros.github.io/note/docs/golang/sync/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go sync包的用法示例&lt;/p&gt;
+&lt;p&gt;go sync 包在go语言并发编程中必不可少，本文介绍go sync包中各个接口的使用方法以及示例&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -151,7 +151,8 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
       
       <guid>https://jageros.github.io/note/docs/golang/grace-exit/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go程序借助系统信号主动停止服务的实现，即程序优雅退出&lt;/p&gt;
+&lt;p&gt;服务端程序是持续不断运行的，在停服时就需要等待各种服务关闭后再退出程序，
+本文将介绍go程序优雅退出目前比较推荐的一种实现方式&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

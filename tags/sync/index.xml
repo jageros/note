@@ -13,7 +13,7 @@
       
       <guid>https://jageros.github.io/note/docs/golang/sync/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go sync包的用法示例&lt;/p&gt;
+&lt;p&gt;go sync 包在go语言并发编程中必不可少，本文介绍go sync包中各个接口的使用方法以及示例&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
