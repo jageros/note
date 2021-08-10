@@ -1,1 +1,0 @@
-navigator.serviceWorker&&navigator.serviceWorker.register("/jageros.github.io/note/sw.js",{scope:"/jageros.github.io/note/"})

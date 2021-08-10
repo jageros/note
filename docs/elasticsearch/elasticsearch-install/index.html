@@ -15,18 +15,18 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
 本文记录Linux上Elasticsearch的安装配置等部署流程
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-08-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-08-03T00:00:00+00:00" />
 
 <title>Elasticsearch部署 | Jager&#39;s Note</title>
-<link rel="manifest" href="/jageros.github.io/note/manifest.json">
-<link rel="icon" href="/jageros.github.io/note/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/jageros.github.io/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" >
-  <script defer src="/jageros.github.io/note/flexsearch.min.js"></script>
-  <script defer src="/jageros.github.io/note/en.search.min.0e6273a6672b1dbedc24a28f46594df61e231d8ccc0c40a928fdc4debde19165.js" ></script>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/note/flexsearch.min.js"></script>
+  <script defer src="/note/en.search.min.78dc2eb300e9ca0a77d7671e129079f226b1a953e9a09bb5bfdbcc361a3865fc.js" integrity="sha256-eNwuswDpygp312ceEpB58iaxqVPpoJu1v9vMNho4Zfw=" crossorigin="anonymous"></script>
 
-  <script defer src="/jageros.github.io/note/sw.min.dac8ff2d494c627c5568007453d9e195777411a682193a868e6e6dbd438d2ba0.js" ></script>
+  <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -42,7 +42,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a href="jageros.github.io/note/"><span>Jager&#39;s Note</span>
+  <a href="/note/"><span>Jager&#39;s Note</span>
   </a>
 </h2>
 
@@ -79,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
     <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/linux/" class="">Linux</a>
+      <a href="https://jageros.github.io/note/docs/linux/" class="">Linux</a>
     </label>
   
 
@@ -93,7 +93,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+    <a href="https://jageros.github.io/note/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
   
 
         </li>
@@ -113,7 +113,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle"  />
     <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/golang/" class="">Go语言笔记</a>
+      <a href="https://jageros.github.io/note/docs/golang/" class="">Go语言笔记</a>
     </label>
   
 
@@ -127,7 +127,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/go-pkg/" class="">go第三方库列表</a>
+    <a href="https://jageros.github.io/note/docs/golang/go-pkg/" class="">go第三方库列表</a>
   
 
         </li>
@@ -140,7 +140,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/channel/" class="">channel注意事项</a>
+    <a href="https://jageros.github.io/note/docs/golang/channel/" class="">channel注意事项</a>
   
 
         </li>
@@ -153,7 +153,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/sync/" class="">golang sync包的使用</a>
+    <a href="https://jageros.github.io/note/docs/golang/sync/" class="">golang sync包的使用</a>
   
 
         </li>
@@ -166,7 +166,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+    <a href="https://jageros.github.io/note/docs/golang/study-line/" class="">go服务端开发学习指南</a>
   
 
         </li>
@@ -179,7 +179,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+    <a href="https://jageros.github.io/note/docs/golang/grace-exit/" class="">go程序优雅退出</a>
   
 
         </li>
@@ -192,7 +192,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+    <a href="https://jageros.github.io/note/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
   
 
         </li>
@@ -205,7 +205,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/queue/" class="">queue golang实现</a>
+    <a href="https://jageros.github.io/note/docs/golang/queue/" class="">queue golang实现</a>
   
 
         </li>
@@ -218,7 +218,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
+    <a href="https://jageros.github.io/note/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
   
 
         </li>
@@ -231,7 +231,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/golang/other-recode/" class="">零碎笔记</a>
+    <a href="https://jageros.github.io/note/docs/golang/other-recode/" class="">零碎笔记</a>
   
 
         </li>
@@ -251,7 +251,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
     <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/database/" class="">数据库相关</a>
+      <a href="https://jageros.github.io/note/docs/database/" class="">数据库相关</a>
     </label>
   
 
@@ -265,7 +265,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+    <a href="https://jageros.github.io/note/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
   
 
         </li>
@@ -285,7 +285,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
     <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/nginx/" class="">Nginx</a>
+      <a href="https://jageros.github.io/note/docs/nginx/" class="">Nginx</a>
     </label>
   
 
@@ -299,7 +299,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+    <a href="https://jageros.github.io/note/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
   
 
         </li>
@@ -312,7 +312,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+    <a href="https://jageros.github.io/note/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
   
 
         </li>
@@ -325,7 +325,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/nginx/proxy/" class="">nginx反向代理</a>
+    <a href="https://jageros.github.io/note/docs/nginx/proxy/" class="">nginx反向代理</a>
   
 
         </li>
@@ -345,7 +345,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
     <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/etcd/" class="">Etcd</a>
+      <a href="https://jageros.github.io/note/docs/etcd/" class="">Etcd</a>
     </label>
   
 
@@ -366,7 +366,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
     <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/queue/" class="">消息队列</a>
+      <a href="https://jageros.github.io/note/docs/queue/" class="">消息队列</a>
     </label>
   
 
@@ -387,7 +387,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle" checked />
     <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/elasticsearch/" class="">Elasticsearch</a>
+      <a href="https://jageros.github.io/note/docs/elasticsearch/" class="">Elasticsearch</a>
     </label>
   
 
@@ -401,7 +401,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" class=" active">Elasticsearch部署</a>
+    <a href="https://jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" class=" active">Elasticsearch部署</a>
   
 
         </li>
@@ -421,7 +421,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
     <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/kubernetes/" class="">Kubernetes</a>
+      <a href="https://jageros.github.io/note/docs/kubernetes/" class="">Kubernetes</a>
     </label>
   
 
@@ -435,7 +435,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+    <a href="https://jageros.github.io/note/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
   
 
         </li>
@@ -455,7 +455,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
     <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/algorithm/" class="">算法知识</a>
+      <a href="https://jageros.github.io/note/docs/algorithm/" class="">算法知识</a>
     </label>
   
 
@@ -469,7 +469,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+    <a href="https://jageros.github.io/note/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
   
 
         </li>
@@ -489,7 +489,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
     <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/interview/" class="">面试相关笔记</a>
+      <a href="https://jageros.github.io/note/docs/interview/" class="">面试相关笔记</a>
     </label>
   
 
@@ -503,7 +503,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/interview/interview/" class="">面经</a>
+    <a href="https://jageros.github.io/note/docs/interview/interview/" class="">面经</a>
   
 
         </li>
@@ -516,7 +516,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/interview/plan/" class="">面试准备</a>
+    <a href="https://jageros.github.io/note/docs/interview/plan/" class="">面试准备</a>
   
 
         </li>
@@ -529,7 +529,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/interview/faq/" class="">面试灵魂拷问</a>
+    <a href="https://jageros.github.io/note/docs/interview/faq/" class="">面试灵魂拷问</a>
   
 
         </li>
@@ -549,7 +549,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
     <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/material/" class="">学习资料</a>
+      <a href="https://jageros.github.io/note/docs/material/" class="">学习资料</a>
     </label>
   
 
@@ -563,7 +563,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/material/reference/" class="">参考博客文献</a>
+    <a href="https://jageros.github.io/note/docs/material/reference/" class="">参考博客文献</a>
   
 
         </li>
@@ -583,7 +583,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
     <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/other/" class="">其他笔记</a>
+      <a href="https://jageros.github.io/note/docs/other/" class="">其他笔记</a>
     </label>
   
 
@@ -597,7 +597,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="jageros.github.io/note/docs/other/mac/" class="">其他记录</a>
+    <a href="https://jageros.github.io/note/docs/other/mac/" class="">其他记录</a>
   
 
         </li>
@@ -617,7 +617,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
     <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
-      <a href="jageros.github.io/note/docs/life/" class="">生活日志</a>
+      <a href="https://jageros.github.io/note/docs/life/" class="">生活日志</a>
     </label>
   
 
@@ -680,14 +680,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/jageros.github.io/note/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Elasticsearch部署</strong>
 
   <label for="toc-control">
     
-    <img src="/jageros.github.io/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -724,7 +724,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="jageros.github.io/note/docs/elasticsearch/elasticsearch-install/">Elasticsearch部署</a>
+    <a href="/note/docs/elasticsearch/elasticsearch-install/">Elasticsearch部署</a>
   </h1>
   
   <h5>2021-08-03</h5>
@@ -736,8 +736,8 @@ https://github.com/alex-shpak/hugo-book
   
   <div>
     
-      <a href="jageros.github.io/note/tags/elasticsearch/">elasticsearch</a>, 
-      <a href="jageros.github.io/note/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">搜索引擎</a>
+      <a href="/note/tags/elasticsearch/">elasticsearch</a>, 
+      <a href="/note/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">搜索引擎</a>
   </div>
   
 

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>事件 on Jager&#39;s Note</title>
-    <link>jageros.github.io/note/tags/%E4%BA%8B%E4%BB%B6/</link>
+    <link>https://jageros.github.io/note/tags/%E4%BA%8B%E4%BB%B6/</link>
     <description>Recent content in 事件 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go程序发布监听事件库</title>
-      <link>jageros.github.io/note/docs/golang/eventhub/</link>
+      <link>https://jageros.github.io/note/docs/golang/eventhub/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>jageros.github.io/note/docs/golang/eventhub/</guid>
+      <guid>https://jageros.github.io/note/docs/golang/eventhub/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;这是一个开源的用于golang程序内部发布和监听事件的package，
 其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，

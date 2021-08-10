@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Jager&#39;s Note</title>
-    <link>jageros.github.io/note/tags/linux/</link>
+    <link>https://jageros.github.io/note/tags/linux/</link>
     <description>Recent content in linux on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux不常用操作记录</title>
-      <link>jageros.github.io/note/docs/linux/operate-recode/</link>
+      <link>https://jageros.github.io/note/docs/linux/operate-recode/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>jageros.github.io/note/docs/linux/operate-recode/</guid>
+      <guid>https://jageros.github.io/note/docs/linux/operate-recode/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文记录一些Linux的不常用且难以记忆的命令，供以后需要使用可以翻阅&lt;/p&gt;
 &lt;/blockquote&gt;</description>
