@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>消息队列 on Jager&#39;s Note</title>
+    <link>/docs/queue/</link>
+    <description>Recent content in 消息队列 on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/docs/queue/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

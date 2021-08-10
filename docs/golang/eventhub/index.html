@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+这是一个开源的用于golang程序内部发布和监听事件的package，
+其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，
+当发布事件时，通过事件id查找对应的handle，如果找到则执行该handle函数。
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go程序发布监听事件库" />
+<meta property="og:description" content="
+这是一个开源的用于golang程序内部发布和监听事件的package，
+其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，
+当发布事件时，通过事件id查找对应的handle，如果找到则执行该handle函数。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/golang/eventhub/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-08-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-03T00:00:00+00:00" />
+
+<title>go程序发布监听事件库 | Jager&#39;s Note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" >
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cb3edfcf4c38982377693c860e3310e35839466e8dbc7da096ccc7f78f49cffa.js" ></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle" checked />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/eventhub/" class=" active">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/other-recode/" class="">零碎笔记</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
+    <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
+      <a href="/docs/etcd/" class="">Etcd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
+    <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
+      <a href="/docs/queue/" class="">消息队列</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/interview/" class="">面经</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/other/mac/" class="">其他记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go程序发布监听事件库</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用说明">使用说明</a>
+          <ul>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#使用">使用</a></li>
+            <li><a href="#使用示例">使用示例</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码解释">源码解释</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/docs/golang/eventhub/">go程序发布监听事件库</a>
+  </h1>
+  
+  <h5>2021-08-03</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/go/">go</a>, 
+      <a href="/tags/%E4%BA%8B%E4%BB%B6/">事件</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>这是一个开源的用于golang程序内部发布和监听事件的package，
+其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，
+当发布事件时，通过事件id查找对应的handle，如果找到则执行该handle函数。</p>
+</blockquote>
+<h2 id="使用说明">
+  使用说明
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<h3 id="安装">
+  安装
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85">#</a>
+</h3>
+<p><code>go get github.com/jageros/eventhub</code></p>
+<h3 id="使用">
+  使用
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8">#</a>
+</h3>
+<h4 id="监听事件">
+  监听事件
+  <a class="anchor" href="#%e7%9b%91%e5%90%ac%e4%ba%8b%e4%bb%b6">#</a>
+</h4>
+<blockquote>
+<p><code>seq := eventhub.Subscribe(eventID, handle)</code>
+eventID为事件id， 返回的seq为序列号，两者都是int型， handle原型为func(args &hellip;interface{}){}，args参数类型为interface{}型，通过事件发布函数传入</p>
+</blockquote>
+<h4 id="发布事件">
+  发布事件
+  <a class="anchor" href="#%e5%8f%91%e5%b8%83%e4%ba%8b%e4%bb%b6">#</a>
+</h4>
+<blockquote>
+<p><code>eventhub.Publish(eventID, arg1, arg2 ··· )</code>
+eventID为事件id， argx为参数，将传给事件监听的handle</p>
+</blockquote>
+<h4 id="取消监听">
+  取消监听
+  <a class="anchor" href="#%e5%8f%96%e6%b6%88%e7%9b%91%e5%90%ac">#</a>
+</h4>
+<blockquote>
+<p><code>Unsubscribe(eventID int, seq int)</code>
+eventID为事件id， seq为序列号，序列从监听事件函数返回值获得</p>
+</blockquote>
+<h3 id="使用示例">
+  使用示例
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+</h3>
+<p><code>github.com/jageros/eventhub/example/main.go</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/eventhub&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// 监听事件
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Subscribe</span>(<span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Subscribe1 eventId=2 args=%v\n&#34;</span>, <span style="color:#a6e22e">args</span>)
+	})
+	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Subscribe</span>(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Subscribe2 eventId=1 args=%v\n&#34;</span>, <span style="color:#a6e22e">args</span>)
+	})
+	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Subscribe</span>(<span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Subscribe3 eventId=3 args=%v\n&#34;</span>, <span style="color:#a6e22e">args</span>)
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">arg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">args</span>[<span style="color:#ae81ff">0</span>].(<span style="color:#66d9ef">func</span>()); <span style="color:#a6e22e">ok</span> {
+			<span style="color:#a6e22e">arg</span>()
+		}
+	})
+
+	<span style="color:#75715e">// 监听并取消监听
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">seq</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Subscribe</span>(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Subscribe4 eventId=1 args=%+v\n&#34;</span>, <span style="color:#a6e22e">args</span>)
+	})
+	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Unsubscribe</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">seq</span>)
+
+	<span style="color:#75715e">// 发布事件
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Publish</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>)
+	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Publish</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">200</span>)
+	<span style="color:#a6e22e">eventhub</span>.<span style="color:#a6e22e">Publish</span>(<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">test</span>)
+}
+
+<span style="color:#75715e">// 此函数用作参数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;End!\n&#34;</span>)
+}
+</code></pre></div><h2 id="源码解释">
+  源码解释
+  <a class="anchor" href="#%e6%ba%90%e7%a0%81%e8%a7%a3%e9%87%8a">#</a>
+</h2>
+<p><code>eventhub.go</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">eventhub</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+)
+
+<span style="color:#66d9ef">var</span> (
+	<span style="color:#a6e22e">maxSeq</span>    = <span style="color:#ae81ff">0</span>  <span style="color:#75715e">// 序列号
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">listeners</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">listener</span>) <span style="color:#75715e">// map[事件id][]handleFunc
+</span><span style="color:#75715e"></span>)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">listener</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">seq</span>     <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{})
+}
+
+<span style="color:#75715e">/****************************************************************
+</span><span style="color:#75715e"> * func：监听事件函数
+</span><span style="color:#75715e"> * eventID： 事件id
+</span><span style="color:#75715e"> * handler： 事件函数
+</span><span style="color:#75715e"> * return seq ： 该事件当前handle的序列号， 用于取消监听时参数
+</span><span style="color:#75715e"> ***************************************************************/</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Subscribe</span>(<span style="color:#a6e22e">eventID</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{})) (<span style="color:#a6e22e">seq</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">maxSeq</span><span style="color:#f92672">++</span>
+	<span style="color:#a6e22e">seq</span> = <span style="color:#a6e22e">maxSeq</span>
+	<span style="color:#a6e22e">ln</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">listener</span>{
+		<span style="color:#a6e22e">seq</span>:     <span style="color:#a6e22e">seq</span>,
+		<span style="color:#a6e22e">handler</span>: <span style="color:#a6e22e">handler</span>,
+	}
+	<span style="color:#a6e22e">ls</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">listeners</span>[<span style="color:#a6e22e">eventID</span>]
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+		<span style="color:#a6e22e">ls</span> = []<span style="color:#f92672">*</span><span style="color:#a6e22e">listener</span>{}
+	}
+	<span style="color:#a6e22e">listeners</span>[<span style="color:#a6e22e">eventID</span>] = append(<span style="color:#a6e22e">ls</span>, <span style="color:#a6e22e">ln</span>)
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">seq</span>
+}
+
+<span style="color:#75715e">/*******************************************
+</span><span style="color:#75715e"> * func： 发布事件
+</span><span style="color:#75715e"> * eventID 事件id
+</span><span style="color:#75715e"> * args 给handle传的参数
+</span><span style="color:#75715e"> * return nil
+</span><span style="color:#75715e"> *******************************************/</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Publish</span>(<span style="color:#a6e22e">eventID</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">args</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">interface</span>{}) {
+	<span style="color:#a6e22e">ls</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">listeners</span>[<span style="color:#a6e22e">eventID</span>]
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+		<span style="color:#66d9ef">return</span>
+	}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">l</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ls</span> {
+		<span style="color:#a6e22e">catchPanic</span>(<span style="color:#66d9ef">func</span>() {
+			<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">args</span><span style="color:#f92672">...</span>)
+		})
+	}
+}
+
+<span style="color:#75715e">/*************************************
+</span><span style="color:#75715e"> * func： 取消监听
+</span><span style="color:#75715e"> * eventID 事件ID
+</span><span style="color:#75715e"> * seq 事件序列号 （ps：因为一个事件可能存在多个handle函数）
+</span><span style="color:#75715e"> * return nil
+</span><span style="color:#75715e"> *************************************/</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Unsubscribe</span>(<span style="color:#a6e22e">eventID</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">seq</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">ls</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">listeners</span>[<span style="color:#a6e22e">eventID</span>]
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+		<span style="color:#66d9ef">return</span>
+	}
+	<span style="color:#a6e22e">index</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">l</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ls</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">seq</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">seq</span> {
+			<span style="color:#a6e22e">index</span> = <span style="color:#a6e22e">i</span>
+			<span style="color:#66d9ef">break</span>
+		}
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> {
+		<span style="color:#a6e22e">listeners</span>[<span style="color:#a6e22e">eventID</span>] = append(<span style="color:#a6e22e">ls</span>[:<span style="color:#a6e22e">index</span>], <span style="color:#a6e22e">ls</span>[<span style="color:#a6e22e">index</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]<span style="color:#f92672">...</span>)
+	}
+}
+
+<span style="color:#75715e">/*******************************************
+</span><span style="color:#75715e"> * func： 对执行的handle捕获异常并恢复
+</span><span style="color:#75715e"> * f  需要执行法人函数
+</span><span style="color:#75715e"> * return err 执行f返回的错误
+</span><span style="color:#75715e"> *******************************************/</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">catchPanic</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>()) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">interface</span>{}) {
+	<span style="color:#66d9ef">defer</span> <span style="color:#66d9ef">func</span>() {
+		<span style="color:#a6e22e">err</span> = recover()
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;eventhub func panic: %s&#34;</span>, <span style="color:#a6e22e">err</span>)
+		}
+	}()
+
+	<span style="color:#a6e22e">f</span>()
+	<span style="color:#66d9ef">return</span>
+}
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/blog-comment"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用说明">使用说明</a>
+          <ul>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#使用">使用</a></li>
+            <li><a href="#使用示例">使用示例</a></li>
+          </ul>
+        </li>
+        <li><a href="#源码解释">源码解释</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
+这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go第三方库列表" />
+<meta property="og:description" content="
+go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
+这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/golang/go-pkg/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-08-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-06T00:00:00+00:00" />
+
+<title>go第三方库列表 | Jager&#39;s Note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" >
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cb3edfcf4c38982377693c860e3310e35839466e8dbc7da096ccc7f78f49cffa.js" ></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle" checked />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/go-pkg/" class=" active">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/other-recode/" class="">零碎笔记</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
+    <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
+      <a href="/docs/etcd/" class="">Etcd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
+    <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
+      <a href="/docs/queue/" class="">消息队列</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/interview/" class="">面经</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/other/mac/" class="">其他记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go第三方库列表</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#go语言实现的lua虚拟机">go语言实现的lua虚拟机</a></li>
+        <li><a href="#elasticsearch-hook-for-logrus">ElasticSearch Hook for Logrus</a></li>
+        <li><a href="#actor模型go实现">Actor模型go实现</a></li>
+        <li><a href="#go便捷转换器sql---struct">Go便捷转换器（sql -&gt; struct）</a></li>
+        <li><a href="#go语言的rpc服务治理框架">Go语言的RPC服务治理框架</a></li>
+        <li><a href="#go读取excel表">go读取Excel表</a></li>
+        <li><a href="#go-爬虫框架colly">go 爬虫框架colly</a></li>
+        <li><a href="#go底层操作系统交互补充包">go底层操作系统交互补充包</a></li>
+        <li><a href="#双数组树go实现">双数组树go实现</a></li>
+        <li><a href="#go程序优雅重启">go程序优雅重启</a></li>
+        <li><a href="#基于zap封装的log包">基于zap封装的log包</a></li>
+        <li><a href="#go一致性哈希包">go一致性哈希包</a></li>
+        <li><a href="#bilibili开源im框架">bilibili开源IM框架</a></li>
+        <li><a href="#golang-tcp-框架仿gin">golang tcp 框架（仿gin）</a></li>
+        <li><a href="#是一个轻量快速的基于-reactor-模式的非阻塞-tcp-网络库--websocket-server">是一个轻量、快速的基于 Reactor 模式的非阻塞 TCP 网络库 / websocket server</a></li>
+        <li><a href="#go分布式服务框架">go分布式服务框架</a></li>
+        <li><a href="#sql代码生成sqlc">sql代码生成：sqlc</a></li>
+        <li><a href="#go-http路由">go http路由</a></li>
+        <li><a href="#go-测试库-gostub">go 测试库: gostub</a></li>
+        <li><a href="#唯一id生成golang库">唯一id生成golang库</a></li>
+        <li><a href="#golang缓存库-gcache">golang缓存库： gcache</a></li>
+        <li><a href="#go-jwt认证">go jwt认证</a></li>
+        <li><a href="#go爬虫辅助收集页面所有url">go爬虫辅助，收集页面所有url</a></li>
+        <li><a href="#bilibili开源微服务框架kratos">bilibili开源微服务框架：Kratos</a></li>
+        <li><a href="#go-micro微服务框架">go-micro微服务框架</a></li>
+        <li><a href="#go-web-框架neo">go web 框架：neo</a></li>
+        <li><a href="#gim聊天系统">gim聊天系统</a></li>
+        <li><a href="#mysql同步elasticsearch">mysql同步elasticsearch</a></li>
+        <li><a href="#左倾红黑树">左倾红黑树</a></li>
+        <li><a href="#oklog">oklog</a></li>
+        <li><a href="#golang时间库carbon">golang时间库：carbon</a></li>
+        <li><a href="#go协程池ants">go协程池：ants</a></li>
+        <li><a href="#go基准测试框架">go基准测试框架</a></li>
+        <li><a href="#go-kit代码生成器">go-kit代码生成器</a></li>
+        <li><a href="#中文分词">中文分词</a></li>
+        <li><a href="#生成带文字的png图片">生成带文字的png图片</a></li>
+        <li><a href="#chart图表库">chart图表库</a></li>
+        <li><a href="#人脸识别库">人脸识别库</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/docs/golang/go-pkg/">go第三方库列表</a>
+  </h1>
+  
+  <h5>2021-08-06</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/go/">go</a>, 
+      <a href="/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">第三方库</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
+这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找</p>
+</blockquote>
+<h2 id="go语言实现的lua虚拟机">
+  go语言实现的lua虚拟机
+  <a class="anchor" href="#go%e8%af%ad%e8%a8%80%e5%ae%9e%e7%8e%b0%e7%9a%84lua%e8%99%9a%e6%8b%9f%e6%9c%ba">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/yuin/gopher-lua">github.com/yuin/gopher-lua</a></p>
+</blockquote>
+<h2 id="elasticsearch-hook-for-logrus">
+  ElasticSearch Hook for Logrus
+  <a class="anchor" href="#elasticsearch-hook-for-logrus">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/sohlich/elogrus">github.com/sohlich/elogrus</a></p>
+</blockquote>
+<h2 id="actor模型go实现">
+  Actor模型go实现
+  <a class="anchor" href="#actor%e6%a8%a1%e5%9e%8bgo%e5%ae%9e%e7%8e%b0">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/AsynkronIT/protoactor-go">github.com/AsynkronIT/protoactor-go</a></p>
+</blockquote>
+<h2 id="go便捷转换器sql---struct">
+  Go便捷转换器（sql -&gt; struct）
+  <a class="anchor" href="#go%e4%be%bf%e6%8d%b7%e8%bd%ac%e6%8d%a2%e5%99%a8sql---struct">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/airplayx/gormat">github.com/airplayx/gormat</a></p>
+</blockquote>
+<h2 id="go语言的rpc服务治理框架">
+  Go语言的RPC服务治理框架
+  <a class="anchor" href="#go%e8%af%ad%e8%a8%80%e7%9a%84rpc%e6%9c%8d%e5%8a%a1%e6%b2%bb%e7%90%86%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/smallnest/rpcx">github.com/smallnest/rpcx</a></p>
+</blockquote>
+<h2 id="go读取excel表">
+  go读取Excel表
+  <a class="anchor" href="#go%e8%af%bb%e5%8f%96excel%e8%a1%a8">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/qax-os/excelize">github.com/qax-os/excelize</a></p>
+</blockquote>
+<h2 id="go-爬虫框架colly">
+  go 爬虫框架colly
+  <a class="anchor" href="#go-%e7%88%ac%e8%99%ab%e6%a1%86%e6%9e%b6colly">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/gocolly/colly">github.com/gocolly/colly</a></p>
+</blockquote>
+<h2 id="go底层操作系统交互补充包">
+  go底层操作系统交互补充包
+  <a class="anchor" href="#go%e5%ba%95%e5%b1%82%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%ba%a4%e4%ba%92%e8%a1%a5%e5%85%85%e5%8c%85">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/golang/sys">github.com/golang/sys</a></p>
+</blockquote>
+<h2 id="双数组树go实现">
+  双数组树go实现
+  <a class="anchor" href="#%e5%8f%8c%e6%95%b0%e7%bb%84%e6%a0%91go%e5%ae%9e%e7%8e%b0">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/adamzy/cedar-go">github.com/adamzy/cedar-go</a></p>
+</blockquote>
+<h2 id="go程序优雅重启">
+  go程序优雅重启
+  <a class="anchor" href="#go%e7%a8%8b%e5%ba%8f%e4%bc%98%e9%9b%85%e9%87%8d%e5%90%af">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/cloudflare/tableflip">github.com/cloudflare/tableflip</a></p>
+</blockquote>
+<h2 id="基于zap封装的log包">
+  基于zap封装的log包
+  <a class="anchor" href="#%e5%9f%ba%e4%ba%8ezap%e5%b0%81%e8%a3%85%e7%9a%84log%e5%8c%85">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/georgehao/log">github.com/georgehao/log</a></p>
+</blockquote>
+<h2 id="go一致性哈希包">
+  go一致性哈希包
+  <a class="anchor" href="#go%e4%b8%80%e8%87%b4%e6%80%a7%e5%93%88%e5%b8%8c%e5%8c%85">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/stathat/consistent">github.com/stathat/consistent</a></p>
+</blockquote>
+<h2 id="bilibili开源im框架">
+  bilibili开源IM框架
+  <a class="anchor" href="#bilibili%e5%bc%80%e6%ba%90im%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/Terry-Mao/goim">github.com/Terry-Mao/goim</a></p>
+</blockquote>
+<h2 id="golang-tcp-框架仿gin">
+  golang tcp 框架（仿gin）
+  <a class="anchor" href="#golang-tcp-%e6%a1%86%e6%9e%b6%e4%bb%bfgin">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/fwhezfwhez/tcpx">https://github.com/fwhezfwhez/tcpx</a></p>
+</blockquote>
+<h2 id="是一个轻量快速的基于-reactor-模式的非阻塞-tcp-网络库--websocket-server">
+  是一个轻量、快速的基于 Reactor 模式的非阻塞 TCP 网络库 / websocket server
+  <a class="anchor" href="#%e6%98%af%e4%b8%80%e4%b8%aa%e8%bd%bb%e9%87%8f%e5%bf%ab%e9%80%9f%e7%9a%84%e5%9f%ba%e4%ba%8e-reactor-%e6%a8%a1%e5%bc%8f%e7%9a%84%e9%9d%9e%e9%98%bb%e5%a1%9e-tcp-%e7%bd%91%e7%bb%9c%e5%ba%93--websocket-server">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/Allenxuxu/gev">github.com/Allenxuxu/gev</a></p>
+</blockquote>
+<h2 id="go分布式服务框架">
+  go分布式服务框架
+  <a class="anchor" href="#go%e5%88%86%e5%b8%83%e5%bc%8f%e6%9c%8d%e5%8a%a1%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/skynetservices/skynet-archive">github.com/skynetservices/skynet-archive</a></p>
+</blockquote>
+<h2 id="sql代码生成sqlc">
+  sql代码生成：sqlc
+  <a class="anchor" href="#sql%e4%bb%a3%e7%a0%81%e7%94%9f%e6%88%90sqlc">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/kyleconroy/sqlc">github.com/kyleconroy/sqlc</a></p>
+</blockquote>
+<h2 id="go-http路由">
+  go http路由
+  <a class="anchor" href="#go-http%e8%b7%af%e7%94%b1">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/gorilla/mux">github.com/gorilla/mux</a></p>
+</blockquote>
+<h2 id="go-测试库-gostub">
+  go 测试库: gostub
+  <a class="anchor" href="#go-%e6%b5%8b%e8%af%95%e5%ba%93-gostub">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/prashantv/gostub">github.com/prashantv/gostub</a></p>
+</blockquote>
+<h2 id="唯一id生成golang库">
+  唯一id生成golang库
+  <a class="anchor" href="#%e5%94%af%e4%b8%80id%e7%94%9f%e6%88%90golang%e5%ba%93">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/satori/go.uuid">github.com/satori/go.uuid</a></p>
+</blockquote>
+<h2 id="golang缓存库-gcache">
+  golang缓存库： gcache
+  <a class="anchor" href="#golang%e7%bc%93%e5%ad%98%e5%ba%93-gcache">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/bluele/gcache">github.com/bluele/gcache</a></p>
+</blockquote>
+<h2 id="go-jwt认证">
+  go jwt认证
+  <a class="anchor" href="#go-jwt%e8%ae%a4%e8%af%81">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/dgrijalva/jwt-go">github.com/dgrijalva/jwt-go</a></p>
+</blockquote>
+<h2 id="go爬虫辅助收集页面所有url">
+  go爬虫辅助，收集页面所有url
+  <a class="anchor" href="#go%e7%88%ac%e8%99%ab%e8%be%85%e5%8a%a9%e6%94%b6%e9%9b%86%e9%a1%b5%e9%9d%a2%e6%89%80%e6%9c%89url">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/JackDanger/collectlinks">github.com/JackDanger/collectlinks</a></p>
+</blockquote>
+<h2 id="bilibili开源微服务框架kratos">
+  bilibili开源微服务框架：Kratos
+  <a class="anchor" href="#bilibili%e5%bc%80%e6%ba%90%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%a1%86%e6%9e%b6kratos">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/go-kratos/kratos">github.com/go-kratos/kratos</a></p>
+</blockquote>
+<h2 id="go-micro微服务框架">
+  go-micro微服务框架
+  <a class="anchor" href="#go-micro%e5%be%ae%e6%9c%8d%e5%8a%a1%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/micro/go-micro">github.com/micro/go-micro</a></p>
+</blockquote>
+<h2 id="go-web-框架neo">
+  go web 框架：neo
+  <a class="anchor" href="#go-web-%e6%a1%86%e6%9e%b6neo">#</a>
+</h2>
+<p>
+  <a href="https://github.com/ivpusic/neo">github.com/ivpusic/neo</a></p>
+<h2 id="gim聊天系统">
+  gim聊天系统
+  <a class="anchor" href="#gim%e8%81%8a%e5%a4%a9%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/alberliu/gim">github.com/alberliu/gim</a></p>
+</blockquote>
+<h2 id="mysql同步elasticsearch">
+  mysql同步elasticsearch
+  <a class="anchor" href="#mysql%e5%90%8c%e6%ad%a5elasticsearch">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/go-mysql-org/go-mysql-elasticsearch">github.com/go-mysql-org/go-mysql-elasticsearch</a></p>
+</blockquote>
+<h2 id="左倾红黑树">
+  左倾红黑树
+  <a class="anchor" href="#%e5%b7%a6%e5%80%be%e7%ba%a2%e9%bb%91%e6%a0%91">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/petar/GoLLRB">github.com/petar/GoLLRB</a></p>
+</blockquote>
+<h2 id="oklog">
+  oklog
+  <a class="anchor" href="#oklog">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/oklog/oklog">github.com/oklog/oklog</a></p>
+</blockquote>
+<h2 id="golang时间库carbon">
+  golang时间库：carbon
+  <a class="anchor" href="#golang%e6%97%b6%e9%97%b4%e5%ba%93carbon">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/uniplaces/carbon">github.com/uniplaces/carbon</a></p>
+</blockquote>
+<h2 id="go协程池ants">
+  go协程池：ants
+  <a class="anchor" href="#go%e5%8d%8f%e7%a8%8b%e6%b1%a0ants">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/panjf2000/ants">github.com/panjf2000/ants</a></p>
+</blockquote>
+<h2 id="go基准测试框架">
+  go基准测试框架
+  <a class="anchor" href="#go%e5%9f%ba%e5%87%86%e6%b5%8b%e8%af%95%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/fperf/fperf">github.com/fperf/fperf</a></p>
+</blockquote>
+<h2 id="go-kit代码生成器">
+  go-kit代码生成器
+  <a class="anchor" href="#go-kit%e4%bb%a3%e7%a0%81%e7%94%9f%e6%88%90%e5%99%a8">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/metaverse/truss">github.com/metaverse/truss</a></p>
+</blockquote>
+<h2 id="中文分词">
+  中文分词
+  <a class="anchor" href="#%e4%b8%ad%e6%96%87%e5%88%86%e8%af%8d">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/huichen/sego">github.com/huichen/sego</a></p>
+</blockquote>
+<h2 id="生成带文字的png图片">
+  生成带文字的png图片
+  <a class="anchor" href="#%e7%94%9f%e6%88%90%e5%b8%a6%e6%96%87%e5%ad%97%e7%9a%84png%e5%9b%be%e7%89%87">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/golang/freetype">github.com/golang/freetype</a></p>
+</blockquote>
+<h2 id="chart图表库">
+  chart图表库
+  <a class="anchor" href="#chart%e5%9b%be%e8%a1%a8%e5%ba%93">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/wcharczuk/go-chart">github.com/wcharczuk/go-chart</a></p>
+</blockquote>
+<h2 id="人脸识别库">
+  人脸识别库
+  <a class="anchor" href="#%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab%e5%ba%93">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/Kagami/go-face">github.com/Kagami/go-face</a></p>
+</blockquote></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/blog-comment"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#go语言实现的lua虚拟机">go语言实现的lua虚拟机</a></li>
+        <li><a href="#elasticsearch-hook-for-logrus">ElasticSearch Hook for Logrus</a></li>
+        <li><a href="#actor模型go实现">Actor模型go实现</a></li>
+        <li><a href="#go便捷转换器sql---struct">Go便捷转换器（sql -&gt; struct）</a></li>
+        <li><a href="#go语言的rpc服务治理框架">Go语言的RPC服务治理框架</a></li>
+        <li><a href="#go读取excel表">go读取Excel表</a></li>
+        <li><a href="#go-爬虫框架colly">go 爬虫框架colly</a></li>
+        <li><a href="#go底层操作系统交互补充包">go底层操作系统交互补充包</a></li>
+        <li><a href="#双数组树go实现">双数组树go实现</a></li>
+        <li><a href="#go程序优雅重启">go程序优雅重启</a></li>
+        <li><a href="#基于zap封装的log包">基于zap封装的log包</a></li>
+        <li><a href="#go一致性哈希包">go一致性哈希包</a></li>
+        <li><a href="#bilibili开源im框架">bilibili开源IM框架</a></li>
+        <li><a href="#golang-tcp-框架仿gin">golang tcp 框架（仿gin）</a></li>
+        <li><a href="#是一个轻量快速的基于-reactor-模式的非阻塞-tcp-网络库--websocket-server">是一个轻量、快速的基于 Reactor 模式的非阻塞 TCP 网络库 / websocket server</a></li>
+        <li><a href="#go分布式服务框架">go分布式服务框架</a></li>
+        <li><a href="#sql代码生成sqlc">sql代码生成：sqlc</a></li>
+        <li><a href="#go-http路由">go http路由</a></li>
+        <li><a href="#go-测试库-gostub">go 测试库: gostub</a></li>
+        <li><a href="#唯一id生成golang库">唯一id生成golang库</a></li>
+        <li><a href="#golang缓存库-gcache">golang缓存库： gcache</a></li>
+        <li><a href="#go-jwt认证">go jwt认证</a></li>
+        <li><a href="#go爬虫辅助收集页面所有url">go爬虫辅助，收集页面所有url</a></li>
+        <li><a href="#bilibili开源微服务框架kratos">bilibili开源微服务框架：Kratos</a></li>
+        <li><a href="#go-micro微服务框架">go-micro微服务框架</a></li>
+        <li><a href="#go-web-框架neo">go web 框架：neo</a></li>
+        <li><a href="#gim聊天系统">gim聊天系统</a></li>
+        <li><a href="#mysql同步elasticsearch">mysql同步elasticsearch</a></li>
+        <li><a href="#左倾红黑树">左倾红黑树</a></li>
+        <li><a href="#oklog">oklog</a></li>
+        <li><a href="#golang时间库carbon">golang时间库：carbon</a></li>
+        <li><a href="#go协程池ants">go协程池：ants</a></li>
+        <li><a href="#go基准测试框架">go基准测试框架</a></li>
+        <li><a href="#go-kit代码生成器">go-kit代码生成器</a></li>
+        <li><a href="#中文分词">中文分词</a></li>
+        <li><a href="#生成带文字的png图片">生成带文字的png图片</a></li>
+        <li><a href="#chart图表库">chart图表库</a></li>
+        <li><a href="#人脸识别库">人脸识别库</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

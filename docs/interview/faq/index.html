@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+本文收集一些面试golang服务端开发的问题和答案，以及一些知识点的参考文章等，让即将面试的小伙伴有佛脚可抱。
+包括但不限于Linux， golang， 数据库， nginx， etcd， Redis， http， 消息队列，等等。
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="面试灵魂拷问" />
+<meta property="og:description" content="
+本文收集一些面试golang服务端开发的问题和答案，以及一些知识点的参考文章等，让即将面试的小伙伴有佛脚可抱。
+包括但不限于Linux， golang， 数据库， nginx， etcd， Redis， http， 消息队列，等等。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/interview/faq/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-08-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-06T00:00:00+00:00" />
+
+<title>面试灵魂拷问 | Jager&#39;s Note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" >
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cb3edfcf4c38982377693c860e3310e35839466e8dbc7da096ccc7f78f49cffa.js" ></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle"  />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/other-recode/" class="">零碎笔记</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
+    <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
+      <a href="/docs/etcd/" class="">Etcd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
+    <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
+      <a href="/docs/queue/" class="">消息队列</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle" checked />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/interview/" class="">面经</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/faq/" class=" active">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/other/mac/" class="">其他记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>面试灵魂拷问</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#问答集">问答集</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/docs/interview/faq/">面试灵魂拷问</a>
+  </h1>
+  
+  <h5>2021-08-06</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/">面试问题</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>本文收集一些面试golang服务端开发的问题和答案，以及一些知识点的参考文章等，让即将面试的小伙伴有佛脚可抱。
+包括但不限于Linux， golang， 数据库， nginx， etcd， Redis， http， 消息队列，等等。</p>
+</blockquote>
+<h2 id="问答集">
+  问答集
+  <a class="anchor" href="#%e9%97%ae%e7%ad%94%e9%9b%86">#</a>
+</h2>
+<blockquote>
+<p>Q1: Linux的磁盘管理 <br>
+<em>A</em>:</p>
+</blockquote>
+<blockquote>
+<p>Q2: Linux有哪些进程通信方式，五大件 <br>
+A:</p>
+</blockquote>
+<blockquote>
+<p>Q3: Linux的共享内存如何实现，大概说了一下 <br>
+A:</p>
+</blockquote>
+<blockquote>
+<p>Q4: 共享内存实现的具体步骤 <br></p>
+</blockquote>
+<blockquote>
+<p>Q5: socket网络编程，说一下TCP的三次握手和四次挥手 <br></p>
+</blockquote>
+<blockquote>
+<p>Q6:如何把docker讲的很清楚 <br></p>
+</blockquote>
+<blockquote>
+<p>Q7:cgroup在linux的具体实现 <br></p>
+</blockquote>
+<blockquote>
+<p>Q8:多线程用过哪些 <br></p>
+</blockquote>
+<blockquote>
+<p>Q9:MySQL索引的实现，innodb的索引，b+树索引是怎么实现的，为什么用b+树做索引节点，一个节点存了多少数据，怎么规定大小，与磁盘页对应 <br></p>
+</blockquote>
+<blockquote>
+<p>Q10:MySQL的事务隔离级别，分别解决什么问题 <br></p>
+</blockquote>
+<blockquote>
+<p>Q11:Redis了解么，如果Redis有1亿个key，使用keys命令是否会影响线上服务，我说会，因为是单线程模型，可以部署多个节点。 <br></p>
+</blockquote>
+<blockquote>
+<p>Q12:知不知道有一条命令可以实现上面这个功能 <br></p>
+</blockquote>
+<blockquote>
+<p>Q13:Redis的持久化方式，aod和rdb，具体怎么实现，追加日志和备份文件，底层实现原理 <br></p>
+</blockquote>
+<blockquote>
+<p>Q14:Redis的list是怎么实现的，我说用ziplist+quicklist实现的，ziplist压缩空间，quicklist实现链表 <br></p>
+</blockquote>
+<blockquote>
+<p>Q15:sortedset怎么实现的，使用dict+skiplist实现的，问我skiplist的数据结构，大概说了下是个实现简单的快速查询结构。 <br></p>
+</blockquote>
+<blockquote>
+<p>Q16:了解什么消息队列，rmq和kafka <br></p>
+</blockquote>
+<blockquote>
+<p>Q17:线程池 <br></p>
+</blockquote>
+<blockquote>
+<p>Q18:操作系统的进程通信方式，僵尸进程和孤儿进程是什么，如何避免僵尸进程，我说让父进程显示通知，那父进程怎么知道子进程结束了 <br></p>
+</blockquote>
+<blockquote>
+<p>Q19:计算机网络TCP和UDP有什么区别，为什么迅雷下载是基于UDP的，我说FTP是基于TCP，而迅雷是p2p不需要TCP那么可靠的传输保证。 <br></p>
+</blockquote>
+<blockquote>
+<p>Q20:操作系统的死锁必要条件，如何避免死锁 <br></p>
+</blockquote>
+<blockquote>
+<p>Q21:写一个LRU的缓存，需要完成超时淘汰和LRU淘汰。 <br></p>
+</blockquote>
+<blockquote>
+<p>Q22: get和post的区别？ <br>
+A： 
+  <a href="https://blog.csdn.net/kebi007/article/details/103059900">https://blog.csdn.net/kebi007/article/details/103059900</a></p>
+</blockquote>
+<blockquote>
+<p>Q23: Redis 问题集 <br>
+A： 
+  <a href="https://blog.csdn.net/Design407/article/details/103242874">https://blog.csdn.net/Design407/article/details/103242874</a></p>
+</blockquote>
+<blockquote>
+<p>Q24: 消息中间件面试题31道RabbitMQ+ActiveMQ+Kafka <br>
+A: 
+  <a href="https://www.jianshu.com/p/0a322b2bba2a">https://www.jianshu.com/p/0a322b2bba2a</a></p>
+</blockquote></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/blog-comment"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#问答集">问答集</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

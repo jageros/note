@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jager&#39;s Note</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go</title>
+      <link>/tags/go/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>/tags/mongodb/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>/tags/nginx/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>参考文献</title>
+      <link>/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>第三方库</title>
+      <link>/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面经</title>
+      <link>/tags/%E9%9D%A2%E7%BB%8F/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%9D%A2%E7%BB%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试准备</title>
+      <link>/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试问题</title>
+      <link>/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>channel</title>
+      <link>/tags/channel/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/channel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>/tags/elasticsearch/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>queue</title>
+      <link>/tags/queue/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sync</title>
+      <link>/tags/sync/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tinyPng</title>
+      <link>/tags/tinyPng/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tinyPng/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>事件</title>
+      <link>/tags/%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E4%BA%8B%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>优雅退出</title>
+      <link>/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>反向代理</title>
+      <link>/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>命令行</title>
+      <link>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>学习指南</title>
+      <link>/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>搜索引擎</title>
+      <link>/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务端</title>
+      <link>/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>限流</title>
+      <link>/tags/%E9%99%90%E6%B5%81/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%99%90%E6%B5%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>随机数</title>
+      <link>/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>/tags/k8s/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

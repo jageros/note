@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+本文介绍Kubernetes服务部署步骤
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kubernetes服务部署步骤" />
+<meta property="og:description" content="
+本文介绍Kubernetes服务部署步骤
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/kubernetes/kubernetes-setup/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-07-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-30T00:00:00+00:00" />
+
+<title>Kubernetes服务部署步骤 | Jager&#39;s Note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" >
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.cb3edfcf4c38982377693c860e3310e35839466e8dbc7da096ccc7f78f49cffa.js" ></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle"  />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/tinypng/" class="">批量图片压缩go实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/golang/other-recode/" class="">零碎笔记</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
+    <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
+      <a href="/docs/etcd/" class="">Etcd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
+    <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
+      <a href="/docs/queue/" class="">消息队列</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle" checked />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/kubernetes/kubernetes-setup/" class=" active">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/interview/" class="">面经</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/other/mac/" class="">其他记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Kubernetes服务部署步骤</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一环境要求">一、环境要求</a></li>
+        <li><a href="#二kubernetes集群搭建">二、Kubernetes集群搭建</a>
+          <ul>
+            <li><a href="#1修改机器参数">1、修改机器参数</a></li>
+            <li><a href="#2安装docker所有机器">2、安装docker（所有机器）</a></li>
+            <li><a href="#3设置k8s环境变量所有机器">3、设置k8s环境变量（所有机器）</a></li>
+            <li><a href="#4安装配置master节点只在master操作">4、安装配置master节点（只在master操作）</a></li>
+            <li><a href="#5安装node工作节点所有node节点">5、安装node工作节点（所有node节点）</a></li>
+            <li><a href="#6安装flannel网络组件只在master操作">6、安装flannel网络组件（只在master操作）</a></li>
+            <li><a href="#7部署ingress控制器traefik-v23">7、部署Ingress控制器：traefik v2.3</a></li>
+          </ul>
+        </li>
+        <li><a href="#三部署应用">三、部署应用</a>
+          <ul>
+            <li><a href="#1编译应用上传到docker仓库">1、编译应用上传到docker仓库</a></li>
+            <li><a href="#2部署应用">2、部署应用</a></li>
+            <li><a href="#3-测试服务是否正常">3、 测试服务是否正常</a></li>
+            <li><a href="#4更新应用">4、更新应用</a></li>
+            <li><a href="#5停止应用">5、停止应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/docs/kubernetes/kubernetes-setup/">Kubernetes服务部署步骤</a>
+  </h1>
+  
+  <h5>2021-07-30</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/go/">go</a>, 
+      <a href="/tags/k8s/">k8s</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>本文介绍Kubernetes服务部署步骤</p>
+</blockquote>
+<h2 id="一环境要求">
+  一、环境要求
+  <a class="anchor" href="#%e4%b8%80%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82">#</a>
+</h2>
+<ul>
+<li>物理机 × 3 (master × 1 + node × 2)【4核8G】</li>
+<li>Linux发行版：CentOS7</li>
+<li>Linux内核：3.10.0-1160.25.1.el7.x86_64</li>
+<li>docker-ce 18.09.9</li>
+<li>k8s v1.16.0</li>
+</ul>
+<h2 id="二kubernetes集群搭建">
+  二、Kubernetes集群搭建
+  <a class="anchor" href="#%e4%ba%8ckubernetes%e9%9b%86%e7%be%a4%e6%90%ad%e5%bb%ba">#</a>
+</h2>
+<h3 id="1修改机器参数">
+  1、修改机器参数
+  <a class="anchor" href="#1%e4%bf%ae%e6%94%b9%e6%9c%ba%e5%99%a8%e5%8f%82%e6%95%b0">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 分别修改三台机器的主机名</span>
+hostnamectl set-hostname master
+hostnamectl set-hostname node1
+hostnamectl set-hostname node2
+</code></pre></div><h3 id="2安装docker所有机器">
+  2、安装docker（所有机器）
+  <a class="anchor" href="#2%e5%ae%89%e8%a3%85docker%e6%89%80%e6%9c%89%e6%9c%ba%e5%99%a8">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装docker所需的工具</span>
+yum install -y yum-utils device-mapper-persistent-data lvm2
+<span style="color:#75715e"># 配置阿里云的docker源</span>
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+<span style="color:#75715e"># 指定安装这个版本的docker-ce</span>
+yum install -y docker-ce-18.09.9-3.el7
+<span style="color:#75715e"># 启动docker</span>
+systemctl enable docker <span style="color:#f92672">&amp;&amp;</span> systemctl start docker
+</code></pre></div><h3 id="3设置k8s环境变量所有机器">
+  3、设置k8s环境变量（所有机器）
+  <a class="anchor" href="#3%e8%ae%be%e7%bd%aek8s%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e6%89%80%e6%9c%89%e6%9c%ba%e5%99%a8">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 关闭防火墙</span>
+systemctl disable firewalld
+systemctl stop firewalld
+ 
+<span style="color:#75715e"># 关闭selinux</span>
+<span style="color:#75715e"># 临时禁用selinux</span>
+setenforce <span style="color:#ae81ff">0</span>
+<span style="color:#75715e"># 永久关闭 修改/etc/sysconfig/selinux文件设置</span>
+sed -i <span style="color:#e6db74">&#39;s/SELINUX=permissive/SELINUX=disabled/&#39;</span> /etc/sysconfig/selinux
+sed -i <span style="color:#e6db74">&#34;s/SELINUX=enforcing/SELINUX=disabled/g&#34;</span> /etc/selinux/config
+ 
+<span style="color:#75715e"># 禁用交换分区</span>
+swapoff -a
+<span style="color:#75715e"># 永久禁用，打开/etc/fstab注释掉swap那一行。</span>
+sed -i <span style="color:#e6db74">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab
+ 
+<span style="color:#75715e"># 修改内核参数</span>
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt;  /etc/sysctl.d/k8s.conf
+</span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
+</span><span style="color:#e6db74">EOF</span>
+sysctl --system
+</code></pre></div><h3 id="4安装配置master节点只在master操作">
+  4、安装配置master节点（只在master操作）
+  <a class="anchor" href="#4%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aemaster%e8%8a%82%e7%82%b9%e5%8f%aa%e5%9c%a8master%e6%93%8d%e4%bd%9c">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装kubeadm、kubelet、kubectl</span>
+<span style="color:#75715e"># 由于官方k8s源在google，国内无法访问，这里使用阿里云yum源</span>
+<span style="color:#75715e"># 执行配置k8s阿里云源</span>
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+</span><span style="color:#e6db74">[kubernetes]
+</span><span style="color:#e6db74">name=Kubernetes
+</span><span style="color:#e6db74">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+</span><span style="color:#e6db74">enabled=1
+</span><span style="color:#e6db74">gpgcheck=1
+</span><span style="color:#e6db74">repo_gpgcheck=1
+</span><span style="color:#e6db74">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+</span><span style="color:#e6db74">EOF</span>
+ 
+<span style="color:#75715e"># 安装kubeadm、kubectl、kubelet</span>
+yum install -y kubectl-1.16.0-0 kubeadm-1.16.0-0 kubelet-1.16.0-0
+ 
+<span style="color:#75715e"># 启动kubelet服务</span>
+systemctl enable kubelet <span style="color:#f92672">&amp;&amp;</span> systemctl start kubelet
+ 
+<span style="color:#75715e"># 初始化k8s 以下这个命令开始安装k8s需要用到的docker镜像</span>
+<span style="color:#75715e"># 因为无法访问到国外网站，所以这条命令使用的是国内的阿里云的源(registry.aliyuncs.com/google_containers)。</span>
+<span style="color:#75715e"># 另一个非常重要的是：这里的--apiserver-advertise-address使用的是master和node间能互相ping通的master ip，测试环境中是192.168.99.104，请修改成自己的ip再执行。</span>
+<span style="color:#75715e"># 这条命令执行时会卡在[preflight] You can also perform this action in beforehand using &#39;&#39;kubeadm config images pull，大概需要2分钟，请耐心等待。</span>
+
+kubeadm init --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.16.0 --apiserver-advertise-address 192.168.60.143 --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16 --token-ttl <span style="color:#ae81ff">0</span>
+ 
+<span style="color:#75715e"># 上面安装完成后，k8s会提示你输入如下命令，执行</span>
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+ 
+<span style="color:#75715e"># 查询node 加入 master的命令</span>
+kubeadm token create --print-join-command
+
+</code></pre></div><h3 id="5安装node工作节点所有node节点">
+  5、安装node工作节点（所有node节点）
+  <a class="anchor" href="#5%e5%ae%89%e8%a3%85node%e5%b7%a5%e4%bd%9c%e8%8a%82%e7%82%b9%e6%89%80%e6%9c%89node%e8%8a%82%e7%82%b9">#</a>
+</h3>
+<pre><code># 安装kubeadm、kubelet
+# 执行配置k8s阿里云源
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+ 
+# 安装kubeadm、kubectl、kubelet
+yum install -y  kubeadm-1.16.0-0 kubelet-1.16.0-0
+ 
+# 启动kubelet服务
+systemctl enable kubelet &amp;&amp; systemctl start kubelet
+ 
+# 加入集群，如果这里不知道加入集群的命令，可以登录master节点，使用kubeadm token create --print-join-command 来获取
+kubeadm join 192.168.99.104:6443 --token ncfrid.7ap0xiseuf97gikl \
+    --discovery-token-ca-cert-hash sha256:47783e9851a1a517647f1986225f104e81dbfd8fb256ae55ef6d68ce9334c6a2
+
+</code></pre><h3 id="6安装flannel网络组件只在master操作">
+  6、安装flannel网络组件（只在master操作）
+  <a class="anchor" href="#6%e5%ae%89%e8%a3%85flannel%e7%bd%91%e7%bb%9c%e7%bb%84%e4%bb%b6%e5%8f%aa%e5%9c%a8master%e6%93%8d%e4%bd%9c">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+<span style="color:#75715e"># 安装完成之后，可通过 kubectl get nodes 命令查看所有节点是否都为Ready状态，全为Ready说明节点间网络已打通了</span>
+</code></pre></div><h3 id="7部署ingress控制器traefik-v23">
+  7、部署Ingress控制器：traefik v2.3
+  <a class="anchor" href="#7%e9%83%a8%e7%bd%b2ingress%e6%8e%a7%e5%88%b6%e5%99%a8traefik-v23">#</a>
+</h3>
+<ul>
+<li>
+<p>traefik介绍</p>
+<blockquote>
+<p>Traefik 是一个边缘路由器。由于 Traefik 2.X 版本和之前的 1.X 版本不兼容，我们这里选择功能更加强大的 2.X 版本来和大家进行讲解，我们这里使用的镜像是 <code>traefik:2.3</code>。</p>
+<p>在 Traefik 中的配置可以使用两种不同的方式：</p>
+<ul>
+<li>动态配置：完全动态的路由配置</li>
+<li>静态配置：启动配置</li>
+</ul>
+<p><code>静态配置</code>中的元素（这些元素不会经常更改）连接到 providers 并定义 Treafik 将要监听的 entrypoints。</p>
+<blockquote>
+<p>在 Traefik 中有三种方式定义静态配置：在配置文件中、在命令行参数中、通过环境变量传递</p>
+</blockquote>
+<p><code>动态配置</code>包含定义系统如何处理请求的所有配置内容，这些配置是可以改变的，而且是无缝热更新的，没有任何请求中断或连接损耗。</p>
+<p>ps: 具体可参考文章：
+  <a href="https://www.qikqiak.com/post/traefik-2.1-101/">一文搞懂 Traefik2.1 的使用</a></p>
+</blockquote>
+</li>
+<li>
+<p>创建域名证书验证</p>
+<blockquote>
+<p>从域名服务商那里可以免费申请域名的tls证书，将其重名为<code>tls.crt</code>和<code>tls.key</code></p>
+<p>然后使用下面命令生成k8s的域名验证信息， <code>domain-tls</code>为名称，后续会用到，可自行定义</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl create secret tls domain-tls --cert<span style="color:#f92672">=</span>tls.crt --key<span style="color:#f92672">=</span>tls.key
+</code></pre></div></li>
+<li>
+<p>获取traefik安装文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/jageros/treafik-profile.git
+</code></pre></div></li>
+<li>
+<p>修改文件配置</p>
+<blockquote>
+<p>拉取到的仓库有四个yaml文件，其中crd.yaml和rbac.yaml两个文件是不需要修改的，其他两个需要做如下修改</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># deployment.yaml</span>
+<span style="color:#75715e">#通过kubectl get nodes命令可以查看节点名称</span>
+...
+<span style="color:#f92672">nodeSelector</span>:
+
+      <span style="color:#f92672">kubernetes.io/hostname</span>: <span style="color:#ae81ff">master </span> <span style="color:#75715e"># master必须为master节点的名称，根据自己的修改</span>
+...
+
+
+<span style="color:#75715e"># dashboard.yaml</span>
+...
+<span style="color:#f92672">routes</span>:
+   - <span style="color:#f92672">match</span>: <span style="color:#ae81ff">Host(`www.domain.com`) </span> <span style="color:#75715e"># 域名要改成自己的域名</span>
+
+...
+...
+...
+
+  <span style="color:#f92672">tls</span>:
+    <span style="color:#f92672">secretName</span>: <span style="color:#ae81ff">domain-tls</span> <span style="color:#75715e"># 这个即上面生成域名验证信息的名称，需要改成相应的</span>
+</code></pre></div></li>
+<li>
+<p>安装traefik</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 通过shell脚本直接安装即可</span>
+sh apply.sh
+</code></pre></div></li>
+<li>
+<p>检查traefik是否正常运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@master ~<span style="color:#f92672">]</span><span style="color:#75715e"># kubectl get pods -n kube-system</span>
+NAME                             READY   STATUS    RESTARTS   AGE
+coredns-58cc8c89f4-4qq8h         1/1     Running   <span style="color:#ae81ff">14</span>         27d
+coredns-58cc8c89f4-vqj7f         1/1     Running   <span style="color:#ae81ff">14</span>         27d
+etcd-master                      1/1     Running   <span style="color:#ae81ff">16</span>         27d
+kube-apiserver-master            1/1     Running   <span style="color:#ae81ff">16</span>         27d
+kube-controller-manager-master   1/1     Running   <span style="color:#ae81ff">18</span>         27d
+kube-flannel-ds-26rkn            1/1     Running   <span style="color:#ae81ff">18</span>         27d
+kube-flannel-ds-68fv6            1/1     Running   <span style="color:#ae81ff">16</span>         27d
+kube-flannel-ds-n827d            1/1     Running   <span style="color:#ae81ff">14</span>         27d
+kube-flannel-ds-w4w2c            1/1     Running   <span style="color:#ae81ff">16</span>         27d
+kube-proxy-6rnfh                 1/1     Running   <span style="color:#ae81ff">14</span>         27d
+kube-proxy-m4ck5                 1/1     Running   <span style="color:#ae81ff">14</span>         27d
+kube-proxy-rzb4h                 1/1     Running   <span style="color:#ae81ff">16</span>         27d
+kube-proxy-sc5px                 1/1     Running   <span style="color:#ae81ff">14</span>         27d
+kube-scheduler-master            1/1     Running   <span style="color:#ae81ff">18</span>         27d
+traefik-78878774df-vzsc4         1/1     Running   <span style="color:#ae81ff">4</span>          11d
+</code></pre></div></li>
+<li>
+<p>检查是否可外网访问</p>
+<blockquote>
+<p>在域名解析中添加解析到master的IP，然后访问域名，看是否可以访问到dashboard UI（如图所示）</p>
+</blockquote>
+<p>
+  <img src="https://www.qikqiak.com/k8strain/assets/img/network/traefik-2.1.1-dashboard-demo.jpg" alt="dashborad" /></p>
+</li>
+</ul>
+<h2 id="三部署应用">
+  三、部署应用
+  <a class="anchor" href="#%e4%b8%89%e9%83%a8%e7%bd%b2%e5%ba%94%e7%94%a8">#</a>
+</h2>
+<h3 id="1编译应用上传到docker仓库">
+  1、编译应用上传到docker仓库
+  <a class="anchor" href="#1%e7%bc%96%e8%af%91%e5%ba%94%e7%94%a8%e4%b8%8a%e4%bc%a0%e5%88%b0docker%e4%bb%93%e5%ba%93">#</a>
+</h3>
+<ul>
+<li>
+<p>修改编译脚本配置信息</p>
+<blockquote>
+<p>编译脚本为项目中的build_all.sh，build_item.sh和Dockerfile文件</p>
+<p>修改build_all.sh中的版本号和build_item.sh中的仓库地址</p>
+<p>然后执行sh build_all.sh编译即可</p>
+</blockquote>
+</li>
+<li>
+<p>修改服务应用的yaml文件</p>
+<blockquote>
+<p>应用的yaml文件在项目目录下的k8s文件夹下面，需要把镜像的版本号修改成对应build_all.sh文件中的</p>
+<p>域名和验证的tls名称也要改成对应的</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2部署应用">
+  2、部署应用
+  <a class="anchor" href="#2%e9%83%a8%e7%bd%b2%e5%ba%94%e7%94%a8">#</a>
+</h3>
+<ul>
+<li>
+<p>先准备好Etcd、Redis、MongoDB和MySQL，并把配置写入到etcd中</p>
+</li>
+<li>
+<p>把应用的yaml文件打包上传到master机器上</p>
+</li>
+<li>
+<p>通过执行<code>apply.sh</code>脚本即可让应用跑起来</p>
+</li>
+</ul>
+<h3 id="3-测试服务是否正常">
+  3、 测试服务是否正常
+  <a class="anchor" href="#3-%e6%b5%8b%e8%af%95%e6%9c%8d%e5%8a%a1%e6%98%af%e5%90%a6%e6%ad%a3%e5%b8%b8">#</a>
+</h3>
+<ul>
+<li>通过dashborad ui查看路由是否正常</li>
+<li>通过<code>kubectl get pods -n yinyin</code>命令查看pod状态是否正常</li>
+</ul>
+<h3 id="4更新应用">
+  4、更新应用
+  <a class="anchor" href="#4%e6%9b%b4%e6%96%b0%e5%ba%94%e7%94%a8">#</a>
+</h3>
+<ul>
+<li>版本号递增，然后修改yaml中的版本号</li>
+<li>应用：<code>kubectl apply -f xxx.yaml</code></li>
+</ul>
+<h3 id="5停止应用">
+  5、停止应用
+  <a class="anchor" href="#5%e5%81%9c%e6%ad%a2%e5%ba%94%e7%94%a8">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sh delete.sh
+</code></pre></div><h2 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h2>
+<ul>
+<li>
+  <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml">kube-flannel.yml</a></li>
+<li>
+  <a href="https://www.qikqiak.com/post/ingress-traefik1/">traefik教程</a></li>
+</ul></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/blog-comment"
+issue-term="title"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一环境要求">一、环境要求</a></li>
+        <li><a href="#二kubernetes集群搭建">二、Kubernetes集群搭建</a>
+          <ul>
+            <li><a href="#1修改机器参数">1、修改机器参数</a></li>
+            <li><a href="#2安装docker所有机器">2、安装docker（所有机器）</a></li>
+            <li><a href="#3设置k8s环境变量所有机器">3、设置k8s环境变量（所有机器）</a></li>
+            <li><a href="#4安装配置master节点只在master操作">4、安装配置master节点（只在master操作）</a></li>
+            <li><a href="#5安装node工作节点所有node节点">5、安装node工作节点（所有node节点）</a></li>
+            <li><a href="#6安装flannel网络组件只在master操作">6、安装flannel网络组件（只在master操作）</a></li>
+            <li><a href="#7部署ingress控制器traefik-v23">7、部署Ingress控制器：traefik v2.3</a></li>
+          </ul>
+        </li>
+        <li><a href="#三部署应用">三、部署应用</a>
+          <ul>
+            <li><a href="#1编译应用上传到docker仓库">1、编译应用上传到docker仓库</a></li>
+            <li><a href="#2部署应用">2、部署应用</a></li>
+            <li><a href="#3-测试服务是否正常">3、 测试服务是否正常</a></li>
+            <li><a href="#4更新应用">4、更新应用</a></li>
+            <li><a href="#5停止应用">5、停止应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

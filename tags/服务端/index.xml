@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务端 on Jager&#39;s Note</title>
+    <link>/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</link>
+    <description>Recent content in 服务端 on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go服务端开发学习指南</title>
+      <link>/docs/golang/study-line/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/study-line/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍基于go语言的服务端程序开发学习指南，根据列举的知识点自行学习，所列知识点都是开发基础必备技术栈。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>go程序优雅退出</title>
+      <link>/docs/golang/grace-exit/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/grace-exit/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍go程序借助系统信号主动停止服务的实现，即程序优雅退出&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

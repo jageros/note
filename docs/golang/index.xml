@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go语言笔记 on Jager&#39;s Note</title>
+    <link>/docs/golang/</link>
+    <description>Recent content in Go语言笔记 on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go第三方库列表</title>
+      <link>/docs/golang/go-pkg/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/go-pkg/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
+这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>channel注意事项</title>
+      <link>/docs/golang/channel/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/channel/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;channel是go语言编程中必不可少的元素，但对不同状态的channel作read，write和close操作会有不同的结果，
+稍有操作不当，将导致系统 panic，所以本文介绍了channel不同状态的操作结果&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang sync包的使用</title>
+      <link>/docs/golang/sync/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/sync/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍go sync包的用法示例&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>go服务端开发学习指南</title>
+      <link>/docs/golang/study-line/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/study-line/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍基于go语言的服务端程序开发学习指南，根据列举的知识点自行学习，所列知识点都是开发基础必备技术栈。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>go程序优雅退出</title>
+      <link>/docs/golang/grace-exit/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/grace-exit/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍go程序借助系统信号主动停止服务的实现，即程序优雅退出&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>go程序发布监听事件库</title>
+      <link>/docs/golang/eventhub/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/eventhub/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;这是一个开源的用于golang程序内部发布和监听事件的package，
+其原理是通过定义一个全局变量存储监听的事件id和对应的handle函数，
+当发布事件时，通过事件id查找对应的handle，如果找到则执行该handle函数。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>queue golang实现</title>
+      <link>/docs/golang/queue/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/queue/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文介绍go语言queue库的原理，代码解析以及使用方法&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>批量图片压缩go实现</title>
+      <link>/docs/golang/tinypng/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/tinypng/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;基于golang和tinypng的图片批量压缩工具实现&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>零碎笔记</title>
+      <link>/docs/golang/other-recode/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/golang/other-recode/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文记录一些golang程序的一些简短的要点&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mongodb on Jager&#39;s Note</title>
+    <link>/tags/mongodb/</link>
+    <description>Recent content in mongodb on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MongoDB的一些操作记录</title>
+      <link>/docs/database/mongodb/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/database/mongodb/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文记录MongoDB使用过程中，因需求需要进行一些不常用的操作，如创建用户，导出数据，数据备份恢复等运维层面的技术知识，
+后续有遇到继续往文章后面添加，以备不时之需，可来此进行查阅&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
