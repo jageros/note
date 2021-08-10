@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>优雅退出 on Jager&#39;s Note</title>
-    <link>note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</link>
+    <link>jageros.github.io/note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</link>
     <description>Recent content in 优雅退出 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go程序优雅退出</title>
-      <link>note/docs/golang/grace-exit/</link>
+      <link>jageros.github.io/note/docs/golang/grace-exit/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>note/docs/golang/grace-exit/</guid>
+      <guid>jageros.github.io/note/docs/golang/grace-exit/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文介绍go程序借助系统信号主动停止服务的实现，即程序优雅退出&lt;/p&gt;
 &lt;/blockquote&gt;</description>

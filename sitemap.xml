@@ -2,192 +2,192 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>note/docs/linux/</loc>
+    <loc>jageros.github.io/note/docs/linux/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/</loc>
+    <loc>jageros.github.io/note/docs/golang/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/database/</loc>
+    <loc>jageros.github.io/note/docs/database/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/nginx/</loc>
+    <loc>jageros.github.io/note/docs/nginx/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/etcd/</loc>
+    <loc>jageros.github.io/note/docs/etcd/</loc>
   </url><url>
-    <loc>note/docs/queue/</loc>
+    <loc>jageros.github.io/note/docs/queue/</loc>
   </url><url>
-    <loc>note/docs/elasticsearch/</loc>
+    <loc>jageros.github.io/note/docs/elasticsearch/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/kubernetes/</loc>
+    <loc>jageros.github.io/note/docs/kubernetes/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/algorithm/</loc>
+    <loc>jageros.github.io/note/docs/algorithm/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/interview/</loc>
+    <loc>jageros.github.io/note/docs/interview/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/material/</loc>
+    <loc>jageros.github.io/note/docs/material/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/other/</loc>
+    <loc>jageros.github.io/note/docs/other/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/life/</loc>
+    <loc>jageros.github.io/note/docs/life/</loc>
   </url><url>
-    <loc>note/docs/</loc>
+    <loc>jageros.github.io/note/docs/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/go/</loc>
+    <loc>jageros.github.io/note/tags/go/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/go-pkg/</loc>
+    <loc>jageros.github.io/note/docs/golang/go-pkg/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/</loc>
+    <loc>jageros.github.io/note/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/mongodb/</loc>
+    <loc>jageros.github.io/note/tags/mongodb/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/database/mongodb/</loc>
+    <loc>jageros.github.io/note/docs/database/mongodb/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/nginx/</loc>
+    <loc>jageros.github.io/note/tags/nginx/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/nginx/nginxop/</loc>
+    <loc>jageros.github.io/note/docs/nginx/nginxop/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/</loc>
+    <loc>jageros.github.io/note/tags/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/other/mac/</loc>
+    <loc>jageros.github.io/note/docs/other/mac/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/material/reference/</loc>
+    <loc>jageros.github.io/note/docs/material/reference/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
+    <loc>jageros.github.io/note/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
+    <loc>jageros.github.io/note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E9%9D%A2%E7%BB%8F/</loc>
+    <loc>jageros.github.io/note/tags/%E9%9D%A2%E7%BB%8F/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/interview/interview/</loc>
+    <loc>jageros.github.io/note/docs/interview/interview/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</loc>
+    <loc>jageros.github.io/note/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/interview/plan/</loc>
+    <loc>jageros.github.io/note/docs/interview/plan/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/interview/faq/</loc>
+    <loc>jageros.github.io/note/docs/interview/faq/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</loc>
+    <loc>jageros.github.io/note/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/channel/</loc>
+    <loc>jageros.github.io/note/tags/channel/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/channel/</loc>
+    <loc>jageros.github.io/note/docs/golang/channel/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/elasticsearch/</loc>
+    <loc>jageros.github.io/note/tags/elasticsearch/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/elasticsearch/elasticsearch-install/</loc>
+    <loc>jageros.github.io/note/docs/elasticsearch/elasticsearch-install/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/sync/</loc>
+    <loc>jageros.github.io/note/docs/golang/sync/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/study-line/</loc>
+    <loc>jageros.github.io/note/docs/golang/study-line/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/grace-exit/</loc>
+    <loc>jageros.github.io/note/docs/golang/grace-exit/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/eventhub/</loc>
+    <loc>jageros.github.io/note/docs/golang/eventhub/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/linux/</loc>
+    <loc>jageros.github.io/note/tags/linux/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/linux/operate-recode/</loc>
+    <loc>jageros.github.io/note/docs/linux/operate-recode/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/nginx/nginx-limit/</loc>
+    <loc>jageros.github.io/note/docs/nginx/nginx-limit/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/nginx/proxy/</loc>
+    <loc>jageros.github.io/note/docs/nginx/proxy/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/queue/</loc>
+    <loc>jageros.github.io/note/tags/queue/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/queue/</loc>
+    <loc>jageros.github.io/note/docs/golang/queue/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/sync/</loc>
+    <loc>jageros.github.io/note/tags/sync/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/tinyPng/</loc>
+    <loc>jageros.github.io/note/tags/tinyPng/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>jageros.github.io/note/tags/%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</loc>
+    <loc>jageros.github.io/note/tags/%E4%BC%98%E9%9B%85%E9%80%80%E5%87%BA/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
+    <loc>jageros.github.io/note/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
+    <loc>jageros.github.io/note/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
+    <loc>jageros.github.io/note/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/tinypng/</loc>
+    <loc>jageros.github.io/note/docs/golang/tinypng/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
+    <loc>jageros.github.io/note/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
+    <loc>jageros.github.io/note/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/algorithm/random-n-int/</loc>
+    <loc>jageros.github.io/note/docs/algorithm/random-n-int/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>jageros.github.io/note/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E9%99%90%E6%B5%81/</loc>
+    <loc>jageros.github.io/note/tags/%E9%99%90%E6%B5%81/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</loc>
+    <loc>jageros.github.io/note/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/golang/other-recode/</loc>
+    <loc>jageros.github.io/note/docs/golang/other-recode/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/tags/k8s/</loc>
+    <loc>jageros.github.io/note/tags/k8s/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/docs/kubernetes/kubernetes-setup/</loc>
+    <loc>jageros.github.io/note/docs/kubernetes/kubernetes-setup/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>note/categories/</loc>
+    <loc>jageros.github.io/note/categories/</loc>
   </url>
 </urlset>

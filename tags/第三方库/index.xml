@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第三方库 on Jager&#39;s Note</title>
-    <link>note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+    <link>jageros.github.io/note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
     <description>Recent content in 第三方库 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go第三方库列表</title>
-      <link>note/docs/golang/go-pkg/</link>
+      <link>jageros.github.io/note/docs/golang/go-pkg/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>note/docs/golang/go-pkg/</guid>
+      <guid>jageros.github.io/note/docs/golang/go-pkg/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
 这篇文章收集了各种有意思额go语言第三方库，方便开发需要时查找&lt;/p&gt;

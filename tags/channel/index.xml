@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>channel on Jager&#39;s Note</title>
-    <link>note/tags/channel/</link>
+    <link>jageros.github.io/note/tags/channel/</link>
     <description>Recent content in channel on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/tags/channel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/channel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>channel注意事项</title>
-      <link>note/docs/golang/channel/</link>
+      <link>jageros.github.io/note/docs/golang/channel/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>note/docs/golang/channel/</guid>
+      <guid>jageros.github.io/note/docs/golang/channel/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;channel是go语言编程中必不可少的元素，但对不同状态的channel作read，write和close操作会有不同的结果，
 稍有操作不当，将导致系统 panic，所以本文介绍了channel不同状态的操作结果&lt;/p&gt;

@@ -1,14 +1,14 @@
 {
   "name": "Jager's Note",
   "short_name": "Jager's Note",
-  "start_url": "/note/",
-  "scope": "/note/",
+  "start_url": "/jageros.github.io/note/",
+  "scope": "/jageros.github.io/note/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/note/favicon.svg",
+      "src": "/jageros.github.io/note/favicon.svg",
       "sizes": "512x512"
     }
   ]

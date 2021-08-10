@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>限流 on Jager&#39;s Note</title>
-    <link>note/tags/%E9%99%90%E6%B5%81/</link>
+    <link>jageros.github.io/note/tags/%E9%99%90%E6%B5%81/</link>
     <description>Recent content in 限流 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/tags/%E9%99%90%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/tags/%E9%99%90%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx IP 限流</title>
-      <link>note/docs/nginx/nginx-limit/</link>
+      <link>jageros.github.io/note/docs/nginx/nginx-limit/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>note/docs/nginx/nginx-limit/</guid>
+      <guid>jageros.github.io/note/docs/nginx/nginx-limit/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;通过对同一IP进行限流，在一定程度上可以防止应用层DDOS攻击。本文介绍 Nginx对同一IP限流的配置&lt;/p&gt;
 &lt;/blockquote&gt;</description>

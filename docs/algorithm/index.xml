@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法知识 on Jager&#39;s Note</title>
-    <link>note/docs/algorithm/</link>
+    <link>jageros.github.io/note/docs/algorithm/</link>
     <description>Recent content in 算法知识 on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="note/docs/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="jageros.github.io/note/docs/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>生成x个随机数</title>
-      <link>note/docs/algorithm/random-n-int/</link>
+      <link>jageros.github.io/note/docs/algorithm/random-n-int/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>note/docs/algorithm/random-n-int/</guid>
+      <guid>jageros.github.io/note/docs/algorithm/random-n-int/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;需求：生成x个随机数，要求这个x个随机数的和为y， 且随机数的最大值小于平均数的3倍，最小值大于0，例如：5个和为10的随机数避免出现6，1，1，1，1的情况。
 【使用场景：游戏中卡牌包开包时随机出现卡牌质量的分布】&lt;br&gt;
