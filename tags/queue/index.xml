@@ -13,7 +13,7 @@
       
       <guid>https://jageros.github.io/note/docs/golang/queue/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go语言queue库的原理，代码解析以及使用方法&lt;/p&gt;
+&lt;p&gt;本文介绍go语言&lt;code&gt;gopkg.in/eapache/queue&lt;/code&gt;包的原理，代码解析以及使用方法&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

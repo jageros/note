@@ -70,7 +70,8 @@
       
       <guid>https://jageros.github.io/note/docs/interview/interview/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;这里记录我一直以来的面试经历&lt;/p&gt;
+&lt;p&gt;这里记录2020年5月以来的面试经历，主要是一些技术相关的面试问答，如没有答案的可根据问题自行百度答案，
+后续会不断补充完整&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -81,7 +82,7 @@
       
       <guid>https://jageros.github.io/note/docs/interview/plan/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;这里记录我一直以来的面试准备知识点，会不断优化迭代&lt;/p&gt;
+&lt;p&gt;每次面试都需要做好充分的准备，这篇文章就是作为面试前准备的复习文档，每次面试前后都会不断优化迭代此文档，供以后使用&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -176,7 +177,8 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
       
       <guid>https://jageros.github.io/note/docs/linux/operate-recode/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文记录一些Linux的不常用且难以记忆的命令，供以后需要使用可以翻阅&lt;/p&gt;
+&lt;p&gt;本文记录在使用Linux系统过程中，遇到的一些不常用的，需要查询的，难以记忆的操作命令，
+方便以后再次使用的时候，可以翻阅查询，提高开发效率，提高记忆&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -209,18 +211,7 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
       
       <guid>https://jageros.github.io/note/docs/golang/queue/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go语言queue库的原理，代码解析以及使用方法&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>批量图片压缩go实现</title>
-      <link>https://jageros.github.io/note/docs/golang/tinypng/</link>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/golang/tinypng/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;基于golang和tinypng的图片批量压缩工具实现&lt;/p&gt;
+&lt;p&gt;本文介绍go语言&lt;code&gt;gopkg.in/eapache/queue&lt;/code&gt;包的原理，代码解析以及使用方法&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -255,7 +246,11 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
       
       <guid>https://jageros.github.io/note/docs/kubernetes/kubernetes-setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍Kubernetes服务部署步骤&lt;/p&gt;
+&lt;p&gt;kubernetes，简称K8s，是用8代替8个字符“ubernete”而成的缩写。
+是一个开源的，用于管理云平台中多个主机上的容器化的应用，
+Kubernetes的目标是让部署容器化的应用简单并且高效（powerful）,
+Kubernetes提供了应用部署，规划，更新，维护的一种机制。
+本文将介绍Kubernetes集群的部署步骤&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

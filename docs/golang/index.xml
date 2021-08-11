@@ -84,18 +84,7 @@
       
       <guid>https://jageros.github.io/note/docs/golang/queue/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;本文介绍go语言queue库的原理，代码解析以及使用方法&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>批量图片压缩go实现</title>
-      <link>https://jageros.github.io/note/docs/golang/tinypng/</link>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/golang/tinypng/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;基于golang和tinypng的图片批量压缩工具实现&lt;/p&gt;
+&lt;p&gt;本文介绍go语言&lt;code&gt;gopkg.in/eapache/queue&lt;/code&gt;包的原理，代码解析以及使用方法&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
