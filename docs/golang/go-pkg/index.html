@@ -22,7 +22,7 @@ go服务端开发中避免不了使用第三方库，因为第三方库可以避
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
   <script defer src="/note/flexsearch.min.js"></script>
-  <script defer src="/note/en.search.min.68d6924b5372614b4c713c6e320dd5b201a5b2f9902d07e53a827093802ca7ed.js" integrity="sha256-aNaSS1NyYUtMcTxuMg3VsgGlsvmQLQflOoJwk4Asp&#43;0=" crossorigin="anonymous"></script>
+  <script defer src="/note/en.search.min.3fb87d3faedb467aa3fb642c9104721fe1d24ab5e8a54a293793576a9d27b8aa.js" integrity="sha256-P7h9P67bRnqj&#43;2QskQRyH&#43;HSSrXopUopN5NXap0nuKo=" crossorigin="anonymous"></script>
 
   <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
 <!--
@@ -720,6 +720,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
+        <li><a href="#基于websocket或者sockjs的实时通信平台">基于Websocket或者SockJS的实时通信平台</a></li>
+        <li><a href="#开源的-go-分布式事务框架">开源的 Go 分布式事务框架</a></li>
+        <li><a href="#开源的推荐系统">开源的推荐系统</a></li>
         <li><a href="#go语言实现的lua虚拟机">go语言实现的lua虚拟机</a></li>
         <li><a href="#elasticsearch-hook-for-logrus">ElasticSearch Hook for Logrus</a></li>
         <li><a href="#actor模型go实现">Actor模型go实现</a></li>
@@ -796,6 +799,32 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
 这篇文章收集了各种有意思的go语言第三方库，方便开发需要时查找</p>
+</blockquote>
+<h2 id="基于websocket或者sockjs的实时通信平台">
+  基于Websocket或者SockJS的实时通信平台
+  <a class="anchor" href="#%e5%9f%ba%e4%ba%8ewebsocket%e6%88%96%e8%80%85sockjs%e7%9a%84%e5%ae%9e%e6%97%b6%e9%80%9a%e4%bf%a1%e5%b9%b3%e5%8f%b0">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/centrifugal/centrifugo">github.com/centrifugal/centrifugo</a> </br>
+
+  <a href="https://www.jianshu.com/nb/41327411">教程</a></p>
+</blockquote>
+<h2 id="开源的-go-分布式事务框架">
+  开源的 Go 分布式事务框架
+  <a class="anchor" href="#%e5%bc%80%e6%ba%90%e7%9a%84-go-%e5%88%86%e5%b8%83%e5%bc%8f%e4%ba%8b%e5%8a%a1%e6%a1%86%e6%9e%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/yedf/dtm">github.com/yedf/dtm</a></p>
+</blockquote>
+<h2 id="开源的推荐系统">
+  开源的推荐系统
+  <a class="anchor" href="#%e5%bc%80%e6%ba%90%e7%9a%84%e6%8e%a8%e8%8d%90%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/zhenghaoz/gorse">github.com/zhenghaoz/gorse</a></p>
 </blockquote>
 <h2 id="go语言实现的lua虚拟机">
   go语言实现的lua虚拟机
@@ -1165,6 +1194,9 @@ async>
   <ul>
     <li>
       <ul>
+        <li><a href="#基于websocket或者sockjs的实时通信平台">基于Websocket或者SockJS的实时通信平台</a></li>
+        <li><a href="#开源的-go-分布式事务框架">开源的 Go 分布式事务框架</a></li>
+        <li><a href="#开源的推荐系统">开源的推荐系统</a></li>
         <li><a href="#go语言实现的lua虚拟机">go语言实现的lua虚拟机</a></li>
         <li><a href="#elasticsearch-hook-for-logrus">ElasticSearch Hook for Logrus</a></li>
         <li><a href="#actor模型go实现">Actor模型go实现</a></li>
