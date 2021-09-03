@@ -22,7 +22,7 @@ go服务端开发中避免不了使用第三方库，因为第三方库可以避
 <link rel="icon" href="/note/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
   <script defer src="/note/flexsearch.min.js"></script>
-  <script defer src="/note/en.search.min.4c8fd4e2487ffd76ac7a78759af832a976e898140f63be61182871dae9a92ab2.js" integrity="sha256-TI/U4kh//Xasenh1mvgyqXbomBQPY75hGChx2umpKrI=" crossorigin="anonymous"></script>
+  <script defer src="/note/en.search.min.7507373334e3ef30c9463ad2c26b2cb27b76f05b7748eefe4610614a6ee4b571.js" integrity="sha256-dQc3MzTj7zDJRjrSwmsssnt28Ft3SO7&#43;RhBhSm7ktXE=" crossorigin="anonymous"></script>
 
   <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
 <!--
@@ -788,6 +788,11 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
+        <li><a href="#一款根据-sql-语句自动生成-go-结构体的-chrome-插件">一款根据 sql 语句自动生成 Go 结构体的 chrome 插件。</a></li>
+        <li><a href="#一个将-curl-请求命令和数据格式转换为-go-相关代码的在线服务">一个将 curl 请求命令和数据格式转换为 Go 相关代码的在线服务。</a></li>
+        <li><a href="#一个将-yaml-数据转换为-go-结构体的在线服务">一个将 yaml 数据转换为 Go 结构体的在线服务。</a></li>
+        <li><a href="#一个将-toml-数据转换为-go-结构体的在线服务">一个将 toml 数据转换为 Go 结构体的在线服务。</a></li>
+        <li><a href="#一个将-json-数据转换为-go-结构体的在线服务">一个将 json 数据转换为 Go 结构体的在线服务</a></li>
         <li><a href="#基于websocket或者sockjs的实时通信平台">基于Websocket或者SockJS的实时通信平台</a></li>
         <li><a href="#开源的-go-分布式事务框架">开源的 Go 分布式事务框架</a></li>
         <li><a href="#开源的推荐系统">开源的推荐系统</a></li>
@@ -867,6 +872,46 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>go服务端开发中避免不了使用第三方库，因为第三方库可以避免重复造轮子，大大的提高了开发效率，
 这篇文章收集了各种有意思的go语言第三方库，方便开发需要时查找</p>
+</blockquote>
+<h2 id="一款根据-sql-语句自动生成-go-结构体的-chrome-插件">
+  一款根据 sql 语句自动生成 Go 结构体的 chrome 插件。
+  <a class="anchor" href="#%e4%b8%80%e6%ac%be%e6%a0%b9%e6%8d%ae-sql-%e8%af%ad%e5%8f%a5%e8%87%aa%e5%8a%a8%e7%94%9f%e6%88%90-go-%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84-chrome-%e6%8f%92%e4%bb%b6">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://github.com/idoubi/sql2struct">sql2struct</a></p>
+</blockquote>
+<h2 id="一个将-curl-请求命令和数据格式转换为-go-相关代码的在线服务">
+  一个将 curl 请求命令和数据格式转换为 Go 相关代码的在线服务。
+  <a class="anchor" href="#%e4%b8%80%e4%b8%aa%e5%b0%86-curl-%e8%af%b7%e6%b1%82%e5%91%bd%e4%bb%a4%e5%92%8c%e6%95%b0%e6%8d%ae%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2%e4%b8%ba-go-%e7%9b%b8%e5%85%b3%e4%bb%a3%e7%a0%81%e7%9a%84%e5%9c%a8%e7%ba%bf%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://mholt.github.io/curl-to-go/">url-to-Go</a></p>
+</blockquote>
+<h2 id="一个将-yaml-数据转换为-go-结构体的在线服务">
+  一个将 yaml 数据转换为 Go 结构体的在线服务。
+  <a class="anchor" href="#%e4%b8%80%e4%b8%aa%e5%b0%86-yaml-%e6%95%b0%e6%8d%ae%e8%bd%ac%e6%8d%a2%e4%b8%ba-go-%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%9c%a8%e7%ba%bf%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://zhwt.github.io/yaml-to-go/">yaml-to-Go</a></p>
+</blockquote>
+<h2 id="一个将-toml-数据转换为-go-结构体的在线服务">
+  一个将 toml 数据转换为 Go 结构体的在线服务。
+  <a class="anchor" href="#%e4%b8%80%e4%b8%aa%e5%b0%86-toml-%e6%95%b0%e6%8d%ae%e8%bd%ac%e6%8d%a2%e4%b8%ba-go-%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%9c%a8%e7%ba%bf%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://xuri.me/toml-to-go/">TOML-to-Go</a></p>
+</blockquote>
+<h2 id="一个将-json-数据转换为-go-结构体的在线服务">
+  一个将 json 数据转换为 Go 结构体的在线服务
+  <a class="anchor" href="#%e4%b8%80%e4%b8%aa%e5%b0%86-json-%e6%95%b0%e6%8d%ae%e8%bd%ac%e6%8d%a2%e4%b8%ba-go-%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%9c%a8%e7%ba%bf%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<blockquote>
+<p>
+  <a href="https://mholt.github.io/json-to-go/">JSON-to-Go</a></p>
 </blockquote>
 <h2 id="基于websocket或者sockjs的实时通信平台">
   基于Websocket或者SockJS的实时通信平台
@@ -1262,6 +1307,11 @@ async>
   <ul>
     <li>
       <ul>
+        <li><a href="#一款根据-sql-语句自动生成-go-结构体的-chrome-插件">一款根据 sql 语句自动生成 Go 结构体的 chrome 插件。</a></li>
+        <li><a href="#一个将-curl-请求命令和数据格式转换为-go-相关代码的在线服务">一个将 curl 请求命令和数据格式转换为 Go 相关代码的在线服务。</a></li>
+        <li><a href="#一个将-yaml-数据转换为-go-结构体的在线服务">一个将 yaml 数据转换为 Go 结构体的在线服务。</a></li>
+        <li><a href="#一个将-toml-数据转换为-go-结构体的在线服务">一个将 toml 数据转换为 Go 结构体的在线服务。</a></li>
+        <li><a href="#一个将-json-数据转换为-go-结构体的在线服务">一个将 json 数据转换为 Go 结构体的在线服务</a></li>
         <li><a href="#基于websocket或者sockjs的实时通信平台">基于Websocket或者SockJS的实时通信平台</a></li>
         <li><a href="#开源的-go-分布式事务框架">开源的 Go 分布式事务框架</a></li>
         <li><a href="#开源的推荐系统">开源的推荐系统</a></li>
