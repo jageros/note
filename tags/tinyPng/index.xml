@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tinyPng on Jager&#39;s Note</title>
+    <link>https://jageros.github.io/note/tags/tinyPng/</link>
+    <description>Recent content in tinyPng on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/tinyPng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>viper配置示例</title>
+      <link>https://jageros.github.io/note/docs/golang/viper/</link>
+      <pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/golang/viper/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;github.com/spf13/viper&amp;quot;是一个支持读取toml，yaml， ini， json，hcl等格式配置文件的golang库，
+本文通过使用该库配合&amp;quot;github.com/spf13/pflag&amp;quot;和&amp;quot;github.com/fsnotify/fsnotify&amp;quot;库实现从配置文件和启动参数对服务进行配置，
+并实现监听配置文件的实时改动，从而可实现不停服更新配置&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

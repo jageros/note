@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+&ldquo;github.com/spf13/viper&quot;是一个支持读取toml，yaml， ini， json，hcl等格式配置文件的golang库，
+本文通过使用该库配合&quot;github.com/spf13/pflag&quot;和&quot;github.com/fsnotify/fsnotify&quot;库实现从配置文件和启动参数对服务进行配置，
+并实现监听配置文件的实时改动，从而可实现不停服更新配置
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="viper配置示例" />
+<meta property="og:description" content="
+&ldquo;github.com/spf13/viper&quot;是一个支持读取toml，yaml， ini， json，hcl等格式配置文件的golang库，
+本文通过使用该库配合&quot;github.com/spf13/pflag&quot;和&quot;github.com/fsnotify/fsnotify&quot;库实现从配置文件和启动参数对服务进行配置，
+并实现监听配置文件的实时改动，从而可实现不停服更新配置
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jageros.github.io/note/docs/golang/viper/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-09-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-17T00:00:00+00:00" />
+
+<title>viper配置示例 | Jager&#39;s Note</title>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/note/flexsearch.min.js"></script>
+  <script defer src="/note/en.search.min.3e0046501574ff56f401d449ab48cbfa67228890aa5f42e01b31f926ed9601f5.js" integrity="sha256-PgBGUBV0/1b0AdRJq0jL&#43;mciiJCqX0LgGzH5Ju2WAfU=" crossorigin="anonymous"></script>
+
+  <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/note/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle" checked />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/viper/" class=" active">viper配置示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/other-recode/" class="">零碎笔记</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9db18fd45042d0a8d3641d782c558c9b" class="toggle"  />
+    <label for="section-9db18fd45042d0a8d3641d782c558c9b" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/etcd/" class="">Etcd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-938c2e3eb0a698b650d245dc2f5577c9" class="toggle"  />
+    <label for="section-938c2e3eb0a698b650d245dc2f5577c9" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/queue/" class="">消息队列</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/interview/" class="">面经</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/other/mac/" class="">其他记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f39d40212b08dcd8ceb6c3fbe0886d8" class="toggle"  />
+    <label for="section-2f39d40212b08dcd8ceb6c3fbe0886d8" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/fund/" class="">基金数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/fund/funds/" class="">基金数据分析</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7938cf87f880a38cdf014f05114ed748" class="toggle"  />
+    <label for="section-7938cf87f880a38cdf014f05114ed748" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/scheme/" class="">项目实践</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/scheme/werewolf/" class="">狼人对决项目方案</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a4e43754b57e48a59ea384b542052e04" class="toggle"  />
+    <label for="section-a4e43754b57e48a59ea384b542052e04" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/geomancy/" class="">风水知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/geomancy/basics/" class="">风水入门知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>viper配置示例</strong>
+
+  <label for="toc-control">
+    
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#代码示例">代码示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/note/docs/golang/viper/">viper配置示例</a>
+  </h1>
+  
+  <h5>2021-09-17</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/note/tags/go/">go</a>, 
+      <a href="/note/tags/tinyPng/">tinyPng</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>&ldquo;github.com/spf13/viper&quot;是一个支持读取toml，yaml， ini， json，hcl等格式配置文件的golang库，
+本文通过使用该库配合&quot;github.com/spf13/pflag&quot;和&quot;github.com/fsnotify/fsnotify&quot;库实现从配置文件和启动参数对服务进行配置，
+并实现监听配置文件的实时改动，从而可实现不停服更新配置</p>
+</blockquote>
+<h2 id="代码示例">
+  代码示例
+  <a class="anchor" href="#%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">flags</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/hawox/attribute&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/hawox/contextx&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/hawox/logx&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/hawox/mysql&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/jageros/hawox/redis&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/pflag&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/spf13/viper&#34;</span>
+	<span style="color:#a6e22e">clientv3</span> <span style="color:#e6db74">&#34;go.etcd.io/etcd/client/v3&#34;</span>
+	<span style="color:#e6db74">&#34;log&#34;</span>
+	<span style="color:#e6db74">&#34;strconv&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">var</span> (
+	<span style="color:#a6e22e">Options</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span> <span style="color:#75715e">// 全局存储
+</span><span style="color:#75715e"></span>)
+
+<span style="color:#75715e">// 命令行启动参数和配置文件统一的key，避免多次书写出错，命令行中直接使用即可，配置文件中，点隔开代表分级
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> (
+	<span style="color:#75715e">//config
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyConfig</span> = <span style="color:#e6db74">&#34;config&#34;</span>
+	<span style="color:#75715e">//server
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyId</span>   = <span style="color:#e6db74">&#34;server.id&#34;</span>
+	<span style="color:#a6e22e">keyMode</span> = <span style="color:#e6db74">&#34;server.mode&#34;</span>
+	<span style="color:#75715e">// log
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyLogDir</span>     = <span style="color:#e6db74">&#34;log.dir&#34;</span>
+	<span style="color:#a6e22e">keyLogCaller</span>  = <span style="color:#e6db74">&#34;log.caller&#34;</span>
+	<span style="color:#a6e22e">keyLogRequest</span> = <span style="color:#e6db74">&#34;log.request&#34;</span>
+	<span style="color:#75715e">// http
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyHttpIp</span>   = <span style="color:#e6db74">&#34;http.ip&#34;</span>
+	<span style="color:#a6e22e">keyHttpPort</span> = <span style="color:#e6db74">&#34;http.port&#34;</span>
+	<span style="color:#75715e">// rpc
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyRpcIp</span>   = <span style="color:#e6db74">&#34;rpc.ip&#34;</span>
+	<span style="color:#a6e22e">keyRpcPort</span> = <span style="color:#e6db74">&#34;rpc.port&#34;</span>
+	<span style="color:#75715e">// mysql
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyMysqlAddr</span> = <span style="color:#e6db74">&#34;mysql.addr&#34;</span>
+	<span style="color:#a6e22e">keyMysqlUser</span> = <span style="color:#e6db74">&#34;mysql.user&#34;</span>
+	<span style="color:#a6e22e">keyMysqlPwd</span>  = <span style="color:#e6db74">&#34;mysql.password&#34;</span>
+	<span style="color:#a6e22e">keyMysqlDB</span>   = <span style="color:#e6db74">&#34;mysql.database&#34;</span>
+	<span style="color:#75715e">// mongo
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyMongoAddr</span> = <span style="color:#e6db74">&#34;mongo.addr&#34;</span>
+	<span style="color:#a6e22e">keyMongoUser</span> = <span style="color:#e6db74">&#34;mongo.user&#34;</span>
+	<span style="color:#a6e22e">keyMongoPwd</span>  = <span style="color:#e6db74">&#34;mongo.password&#34;</span>
+	<span style="color:#a6e22e">keyMongoDB</span>   = <span style="color:#e6db74">&#34;mongo.database&#34;</span>
+	<span style="color:#75715e">// etcd
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyEtcdAddr</span>     = <span style="color:#e6db74">&#34;etcd.addrs&#34;</span>
+	<span style="color:#a6e22e">keyEtcdUser</span>     = <span style="color:#e6db74">&#34;etcd.user&#34;</span>
+	<span style="color:#a6e22e">keyEtcdPassword</span> = <span style="color:#e6db74">&#34;etcd.password&#34;</span>
+	<span style="color:#75715e">//redis
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyRedisAddr</span>     = <span style="color:#e6db74">&#34;redis.addrs&#34;</span>
+	<span style="color:#a6e22e">keyRedisDB</span>       = <span style="color:#e6db74">&#34;redis.db&#34;</span>
+	<span style="color:#a6e22e">keyRedisUser</span>     = <span style="color:#e6db74">&#34;redis.user&#34;</span>
+	<span style="color:#a6e22e">keyRedisPassword</span> = <span style="color:#e6db74">&#34;redis.password&#34;</span>
+	<span style="color:#75715e">//queue
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyQueueType</span> = <span style="color:#e6db74">&#34;queue.type&#34;</span>
+	<span style="color:#a6e22e">keyQueueAddr</span> = <span style="color:#e6db74">&#34;queue.addrs&#34;</span>
+	<span style="color:#75715e">//frontend
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">keyFrontendAddr</span> = <span style="color:#e6db74">&#34;frontend.addr&#34;</span>
+)
+
+<span style="color:#75715e">// Option 配置数据结构体
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Option</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">ID</span>         <span style="color:#66d9ef">int</span>    <span style="color:#75715e">// 服务id
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">AppName</span>    <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 服务名称
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Mode</span>       <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 模式
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Configfile</span> <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 配置文件路径
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// log配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">LogDir</span>     <span style="color:#66d9ef">string</span> <span style="color:#75715e">// log目录
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">LogCaller</span>  <span style="color:#66d9ef">bool</span>   <span style="color:#75715e">// 是否开启记录输出日志的代码文件行号
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">LogRequest</span> <span style="color:#66d9ef">bool</span>   <span style="color:#75715e">// 是否开启http请求的日志记录
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// http服务配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">HttpIp</span>   <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">HttpPort</span> <span style="color:#66d9ef">int</span>
+
+	<span style="color:#75715e">// rpc服务配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RpcIp</span>   <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">RpcPort</span> <span style="color:#66d9ef">int</span>
+
+	<span style="color:#75715e">// mysql 配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MysqlAddr</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MysqlUser</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MysqlPwd</span>  <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MysqlDB</span>   <span style="color:#66d9ef">string</span>
+
+	<span style="color:#75715e">// MongoDB 配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MongoAddr</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MongoUser</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MongoPwd</span>  <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">MongoDB</span>   <span style="color:#66d9ef">string</span>
+
+	<span style="color:#75715e">// etcd 配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">EtcdAddrs</span>  <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 地址集，用;隔开
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">EtcdUser</span>   <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">EtcdPasswd</span> <span style="color:#66d9ef">string</span>
+
+	<span style="color:#75715e">// redis配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RedisAddrs</span>  <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 数据库地址集，用;隔开
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RedisDBNo</span>   <span style="color:#66d9ef">int</span>    <span style="color:#75715e">// 数据库编号
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RedisUser</span>   <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">RedisPasswd</span> <span style="color:#66d9ef">string</span>
+
+	<span style="color:#75715e">// 消息队列配置
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">QueueType</span>  <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 消息队列类型
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">QueueAddrs</span> <span style="color:#66d9ef">string</span> <span style="color:#75715e">// 地址
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// websocket注册进etcd的地址（外网地址），将返回给客户端
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">FrontendAddr</span> <span style="color:#66d9ef">string</span>
+}
+
+<span style="color:#75715e">// AppID 返回字符串型的appid
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">AppID</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">ID</span>)
+}
+
+<span style="color:#75715e">// Source 可用于服务注册中的key或者日志中的source可区别开不同的服务或同个服务不同的结点
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Source</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s/%d&#34;</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">AppName</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">ID</span>)
+}
+
+<span style="color:#75715e">// defaultOption 返回程序默认的配置项数据
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">defaultOption</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span> {
+	<span style="color:#a6e22e">op</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Option</span>{
+		<span style="color:#a6e22e">ID</span>:       <span style="color:#ae81ff">1</span>,
+		<span style="color:#a6e22e">Mode</span>:     <span style="color:#e6db74">&#34;debug&#34;</span>,
+		<span style="color:#a6e22e">HttpIp</span>:   <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>,
+		<span style="color:#a6e22e">HttpPort</span>: <span style="color:#ae81ff">8888</span>,
+		<span style="color:#a6e22e">RpcIp</span>:    <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>,
+		<span style="color:#a6e22e">RpcPort</span>:  <span style="color:#ae81ff">9999</span>,
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">op</span>
+}
+
+<span style="color:#75715e">// logPath log文件输出的路径，根据AppName来命名
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">logPath</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasSuffix</span>(<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span>, <span style="color:#e6db74">&#34;/&#34;</span>) {
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s%s.log&#34;</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">AppName</span>)
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s/%s.log&#34;</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">AppName</span>)
+}
+
+<span style="color:#75715e">// load 从viper中获取解析出来的参数初始化option中的字段
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">op</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) <span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">v</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">viper</span>.<span style="color:#a6e22e">Viper</span>) {
+	<span style="color:#75715e">//server
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">ID</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetInt</span>(<span style="color:#a6e22e">keyId</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">Mode</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMode</span>)
+	<span style="color:#75715e">//log
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyLogDir</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogCaller</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetBool</span>(<span style="color:#a6e22e">keyLogCaller</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogRequest</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetBool</span>(<span style="color:#a6e22e">keyLogRequest</span>)
+	<span style="color:#75715e">//http
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">HttpIp</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyHttpIp</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">HttpPort</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetInt</span>(<span style="color:#a6e22e">keyHttpPort</span>)
+	<span style="color:#75715e">//rpc
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RpcIp</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyRpcIp</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RpcPort</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetInt</span>(<span style="color:#a6e22e">keyRpcPort</span>)
+	<span style="color:#75715e">//mysql
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlAddr</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMysqlAddr</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlUser</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMysqlUser</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlPwd</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMysqlPwd</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlDB</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMysqlDB</span>)
+	<span style="color:#75715e">//mongo
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoAddr</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMongoAddr</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoUser</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMongoUser</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoPwd</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMongoPwd</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoDB</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyMongoDB</span>)
+	<span style="color:#75715e">//etcd
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdAddrs</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyEtcdAddr</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdUser</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyEtcdUser</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdPasswd</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyEtcdPassword</span>)
+	<span style="color:#75715e">//redis
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisAddrs</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyRedisAddr</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisUser</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyRedisUser</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisPasswd</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyRedisPassword</span>)
+	<span style="color:#75715e">//queue
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">QueueType</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyQueueType</span>)
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">QueueAddrs</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyQueueAddr</span>)
+	<span style="color:#75715e">//frontend
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">FrontendAddr</span> = <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyFrontendAddr</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">FrontendAddr</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> {
+		<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">FrontendAddr</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;127.0.0.1:%d&#34;</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">HttpPort</span>)
+	}
+
+	<span style="color:#75715e">// 根据配置中的mode设置log的等级
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">logLevel</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">Mode</span> {
+	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;release&#34;</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">InfoLevel</span>
+	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;info&#34;</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">InfoLevel</span>
+	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;warn&#34;</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">WarnLevel</span>
+	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;error&#34;</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">ErrorLevel</span>
+	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;panic&#34;</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">PanicLevel</span>
+	<span style="color:#66d9ef">default</span>:
+		<span style="color:#a6e22e">logLevel</span> = <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">DebugLevel</span>
+	}
+
+	<span style="color:#75715e">// 配置日志
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">logOpfs</span> []<span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">Option</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogCaller</span> {
+		<span style="color:#a6e22e">logOpfs</span> = append(<span style="color:#a6e22e">logOpfs</span>, <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">SetCaller</span>())
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogRequest</span> {
+		<span style="color:#a6e22e">logOpfs</span> = append(<span style="color:#a6e22e">logOpfs</span>, <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">SetRequest</span>())
+	}
+	<span style="color:#a6e22e">source</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Source</span>()
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">source</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+		<span style="color:#a6e22e">logOpfs</span> = append(<span style="color:#a6e22e">logOpfs</span>, <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">SetSource</span>(<span style="color:#a6e22e">source</span>))
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+		<span style="color:#a6e22e">logOpfs</span> = append(<span style="color:#a6e22e">logOpfs</span>, <span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">SetFileOut</span>(<span style="color:#a6e22e">logPath</span>()))
+	}
+
+	<span style="color:#75715e">// 初始化日志
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">Init</span>(<span style="color:#a6e22e">logLevel</span>, <span style="color:#a6e22e">logOpfs</span><span style="color:#f92672">...</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultRedis</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">RedisAddrs</span> = <span style="color:#e6db74">&#34;127.0.0.1:6379&#34;</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultClusterRedis</span>(<span style="color:#a6e22e">addrs</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">addr</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;127.0.0.1:7001;127.0.0.1:7002;127.0.0.1:7003;127.0.0.1:7004;127.0.0.1:7005;127.0.0.1:7006&#34;</span>
+	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">addrs</span>) &gt; <span style="color:#ae81ff">0</span> {
+		<span style="color:#a6e22e">addr</span> = <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">addrs</span>, <span style="color:#e6db74">&#34;;&#34;</span>)
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+		<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">RedisAddrs</span> = <span style="color:#a6e22e">addr</span>
+	}
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultMysql</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MysqlAddr</span> = <span style="color:#e6db74">&#34;127.0.0.1:3306&#34;</span>
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MysqlUser</span> = <span style="color:#e6db74">&#34;root&#34;</span>
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MysqlPwd</span> = <span style="color:#e6db74">&#34;QianYin@66&#34;</span>
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MysqlDB</span> = <span style="color:#e6db74">&#34;hawox&#34;</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultMongo</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MongoAddr</span> = <span style="color:#e6db74">&#34;127.0.0.1:27017&#34;</span>
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">MongoDB</span> = <span style="color:#e6db74">&#34;attribute&#34;</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultEtcd</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">EtcdAddrs</span> = <span style="color:#e6db74">&#34;127.0.0.1:2379&#34;</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DefaultQueue</span>(<span style="color:#a6e22e">option</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>) {
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">QueueType</span> = <span style="color:#e6db74">&#34;kafka&#34;</span>
+	<span style="color:#a6e22e">option</span>.<span style="color:#a6e22e">QueueAddrs</span> = <span style="color:#e6db74">&#34;127.0.0.1:9092&#34;</span>
+}
+
+<span style="color:#75715e">// Parse 解析配置， 启动参数有传参则忽略配置文件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Parse</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">opts</span> <span style="color:#f92672">...</span><span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Option</span>)) (<span style="color:#a6e22e">ctx</span> <span style="color:#a6e22e">contextx</span>.<span style="color:#a6e22e">Context</span>, <span style="color:#a6e22e">wait</span> <span style="color:#66d9ef">func</span>()) {
+	<span style="color:#a6e22e">Options</span> = <span style="color:#a6e22e">defaultOption</span>()
+
+	<span style="color:#75715e">// 调用该接口时可以改变默认值，但优先顺序为 启动参数 &gt; 配置文件 &gt; 接口传参 &gt; 默认值
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">optf</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">opts</span> {
+		<span style="color:#a6e22e">optf</span>(<span style="color:#a6e22e">Options</span>)
+	}
+
+	<span style="color:#75715e">// 启动参数：
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//config
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyConfig</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">Configfile</span>, <span style="color:#e6db74">&#34;Config file path&#34;</span>)
+	<span style="color:#75715e">// server
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Int</span>(<span style="color:#a6e22e">keyId</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#e6db74">&#34;Application Id&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMode</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">Mode</span>, <span style="color:#e6db74">&#34;Server mode, default: debug, optional：debug/test/release&#34;</span>)
+	<span style="color:#75715e">// log
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyLogDir</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogDir</span>, <span style="color:#e6db74">&#34;Log dir&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Bool</span>(<span style="color:#a6e22e">keyLogCaller</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogCaller</span>, <span style="color:#e6db74">&#34;log caller&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Bool</span>(<span style="color:#a6e22e">keyLogRequest</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">LogRequest</span>, <span style="color:#e6db74">&#34;log request&#34;</span>)
+	<span style="color:#75715e">// http
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyHttpIp</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">HttpIp</span>, <span style="color:#e6db74">&#34;Http listen ip&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Int</span>(<span style="color:#a6e22e">keyHttpPort</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">HttpPort</span>, <span style="color:#e6db74">&#34;HTTP server port&#34;</span>)
+	<span style="color:#75715e">// rpc
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyRpcIp</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RpcIp</span>, <span style="color:#e6db74">&#34;Rpc listen ip&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Int</span>(<span style="color:#a6e22e">keyRpcPort</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RpcPort</span>, <span style="color:#e6db74">&#34;Rpc server port&#34;</span>)
+	<span style="color:#75715e">// mysql
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMysqlAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlAddr</span>, <span style="color:#e6db74">&#34;mysql addr&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMysqlUser</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlUser</span>, <span style="color:#e6db74">&#34;mysql user&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMysqlPwd</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlPwd</span>, <span style="color:#e6db74">&#34;mysql password&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMysqlDB</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MysqlDB</span>, <span style="color:#e6db74">&#34;mysql database&#34;</span>)
+	<span style="color:#75715e">// mongo
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMongoAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoAddr</span>, <span style="color:#e6db74">&#34;MongoDB addr&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMongoUser</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoUser</span>, <span style="color:#e6db74">&#34;MongoDB user&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMongoPwd</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoPwd</span>, <span style="color:#e6db74">&#34;MongoDB password&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyMongoDB</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">MongoDB</span>, <span style="color:#e6db74">&#34;MongoDB database&#34;</span>)
+	<span style="color:#75715e">// etcd
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyEtcdAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdAddrs</span>, <span style="color:#e6db74">&#34;Etcd addrs, use ; split&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyEtcdUser</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdUser</span>, <span style="color:#e6db74">&#34;Etcd user&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyEtcdPassword</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">EtcdPasswd</span>, <span style="color:#e6db74">&#34;Etcd password&#34;</span>)
+	<span style="color:#75715e">// redis
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyRedisAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisAddrs</span>, <span style="color:#e6db74">&#34;Redis addrs, use ; split&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Int</span>(<span style="color:#a6e22e">keyRedisDB</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisDBNo</span>, <span style="color:#e6db74">&#34;Redis DB NO.&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyRedisUser</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisUser</span>, <span style="color:#e6db74">&#34;Redis user&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyRedisPassword</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">RedisPasswd</span>, <span style="color:#e6db74">&#34;Redis password&#34;</span>)
+	<span style="color:#75715e">// queue
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyQueueType</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">QueueType</span>, <span style="color:#e6db74">&#34;queue type, optional: nsq/kafka&#34;</span>)
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyQueueAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">QueueAddrs</span>, <span style="color:#e6db74">&#34;queue addrs, use ; split&#34;</span>)
+	<span style="color:#75715e">// frontend
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">keyFrontendAddr</span>, <span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">FrontendAddr</span>, <span style="color:#e6db74">&#34;frontend addr&#34;</span>)
+
+	<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">Parse</span>()
+
+	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">viper</span>.<span style="color:#a6e22e">New</span>()
+	<span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">BindPFlags</span>(<span style="color:#a6e22e">pflag</span>.<span style="color:#a6e22e">CommandLine</span>) <span style="color:#75715e">// 绑定命令行参数
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;v.BindPFlags err: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+	}
+
+	<span style="color:#75715e">// 获取命令行配置文件路径参数
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">path</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">GetString</span>(<span style="color:#a6e22e">keyConfig</span>)
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">fileName</span>, <span style="color:#a6e22e">fileType</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#75715e">// 配置文件路径不为空则读取配置文件， 即命令行有传入配置文件路径时
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+		<span style="color:#75715e">// 获取配置文件的后缀名
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">strs</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">path</span>, <span style="color:#e6db74">&#34;.&#34;</span>)
+		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">strs</span>) &lt; <span style="color:#ae81ff">2</span> {
+			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;错误的配置文件路径&#34;</span>)
+		}
+
+		<span style="color:#a6e22e">fileType</span> = <span style="color:#a6e22e">strs</span>[len(<span style="color:#a6e22e">strs</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+		<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">fileType</span> {
+		<span style="color:#75715e">// 支持的文件类型yaml、json、 toml、hcl, ini
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;yaml&#34;</span>, <span style="color:#e6db74">&#34;yml&#34;</span>, <span style="color:#e6db74">&#34;json&#34;</span>, <span style="color:#e6db74">&#34;toml&#34;</span>, <span style="color:#e6db74">&#34;hcl&#34;</span>, <span style="color:#e6db74">&#34;ini&#34;</span>:
+			<span style="color:#a6e22e">fPath</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Replace</span>(<span style="color:#a6e22e">path</span>, <span style="color:#e6db74">&#34;.&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">fileType</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+			<span style="color:#a6e22e">strs</span> = <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">fPath</span>, <span style="color:#e6db74">&#34;/&#34;</span>)
+			<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">strs</span>) &lt; <span style="color:#ae81ff">2</span> {
+				<span style="color:#a6e22e">fileName</span> = <span style="color:#a6e22e">strs</span>[<span style="color:#ae81ff">0</span>]
+				<span style="color:#a6e22e">dir</span> = <span style="color:#e6db74">&#34;./&#34;</span>
+			} <span style="color:#66d9ef">else</span> {
+				<span style="color:#a6e22e">fileName</span> = <span style="color:#a6e22e">strs</span>[len(<span style="color:#a6e22e">strs</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+				<span style="color:#a6e22e">dir</span> = <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">strs</span>[:len(<span style="color:#a6e22e">strs</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34;/&#34;</span>)
+			}
+
+			<span style="color:#75715e">//设置读取的配置文件
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">SetConfigName</span>(<span style="color:#a6e22e">fileName</span>)
+			<span style="color:#75715e">//添加读取的配置文件路径
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">AddConfigPath</span>(<span style="color:#a6e22e">dir</span>)
+			<span style="color:#75715e">//设置配置文件类型
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">SetConfigType</span>(<span style="color:#a6e22e">fileType</span>)
+
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">ReadInConfig</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+				<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;v.ReadInConfig err: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+			}
+
+			<span style="color:#75715e">// 这部分代码为监听配置文件是否有更新，有更新则重新解析配置文件，重新解析也无法覆盖命令行参数
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 可根据需求启用
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 依赖库： &#34;github.com/fsnotify/fsnotify&#34;
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">////设置监听回调函数
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//v.OnConfigChange(func(e fsnotify.Event) {
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//  logx.Sync() // 重新初始化时先同步
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//	Options.load(v)
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//	if onReloadConfigFn != nil {
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//		onReloadConfigFn()
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//	}
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//})
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">////开始监听
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//v.WatchConfig()
+</span><span style="color:#75715e"></span>
+		<span style="color:#66d9ef">default</span>:
+			<span style="color:#75715e">// 其他类型抛出错误
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;错误的配置文件类型&#34;</span>)
+		}
+	}
+
+	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">AppName</span> = <span style="color:#a6e22e">name</span>
+	<span style="color:#75715e">// 从viper解析出来的参数对option中的字段赋值
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Options</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">v</span>)
+
+	<span style="color:#75715e">// 结合信号和context实现的类似与errgroup的一个库，可以根据自己项目需求设计自己的接口
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 不可直接照搬，这里存在其他依赖库暂时未开源，所以属于伪代码
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">contextx</span>.<span style="color:#a6e22e">Default</span>()
+
+	<span style="color:#a6e22e">wait</span> = <span style="color:#66d9ef">func</span>() {
+		<span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">Wait</span>()
+		<span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">Infof</span>(<span style="color:#e6db74">&#34;Application Stop With: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+		<span style="color:#a6e22e">logx</span>.<span style="color:#a6e22e">Sync</span>()
+	}
+
+	<span style="color:#66d9ef">return</span>
+}
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/note"
+issue-term="pathname"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#代码示例">代码示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
