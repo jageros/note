@@ -5,7 +5,18 @@
     <link>https://jageros.github.io/note/tags/go/</link>
     <description>Recent content in go on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IM系统架构学习文献</title>
+      <link>https://jageros.github.io/note/docs/imsys/material/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/imsys/material/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;来自IM即使通信网的一些IM系统架构学习的博客&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>viper配置示例</title>
       <link>https://jageros.github.io/note/docs/golang/viper/</link>
@@ -111,17 +122,6 @@
 &lt;p&gt;需求：生成x个随机数，要求这个x个随机数的和为y， 且随机数的最大值小于平均数的3倍，最小值大于0，例如：5个和为10的随机数避免出现6，1，1，1，1的情况。
 【使用场景：游戏中卡牌包开包时随机出现卡牌质量的分布】&lt;br&gt;
 本文展示go语言对该算法的实现&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>零碎笔记</title>
-      <link>https://jageros.github.io/note/docs/golang/other-recode/</link>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/golang/other-recode/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文记录一些golang程序的一些简短的要点&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

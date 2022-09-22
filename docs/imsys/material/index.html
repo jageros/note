@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+来自IM即使通信网的一些IM系统架构学习的博客
+">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="IM系统架构学习文献" />
+<meta property="og:description" content="
+来自IM即使通信网的一些IM系统架构学习的博客
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jageros.github.io/note/docs/imsys/material/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-03-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-22T00:00:00+00:00" />
+
+<title>IM系统架构学习文献 | Jager&#39;s Note</title>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/note/flexsearch.min.js"></script>
+  <script defer src="/note/en.search.min.033c17d661d4877be653649df5f5db68d07e08794a8c87273b3fe160e22971c6.js" integrity="sha256-AzwX1mHUh3vmU2Sd9fXbaNB&#43;CHlKjIcnOz/hYOIpccY=" crossorigin="anonymous"></script>
+
+  <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/note/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle"  />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/viper/" class="">viper配置示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-16266eaeb0d05f9cd03b5dcee3d3fab7" class="toggle" checked />
+    <label for="section-16266eaeb0d05f9cd03b5dcee3d3fab7" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/imsys/" class="">IM系统架构</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/imsys/material/" class=" active">IM系统架构学习文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>IM系统架构学习文献</strong>
+
+  <label for="toc-control">
+    
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#零基础im开发入门系列文章">零基础IM开发入门系列文章</a></li>
+            <li><a href="#唯一消息id相关">唯一消息ID相关</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/note/docs/imsys/material/">IM系统架构学习文献</a>
+  </h1>
+  
+  <h5>2022-03-22</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/note/tags/go/">go</a>, 
+      <a href="/note/tags/im/">im</a>
+  </div>
+  
+
+
+
+<blockquote>
+<p>来自IM即使通信网的一些IM系统架构学习的博客</p>
+</blockquote>
+<h3 id="零基础im开发入门系列文章">
+  零基础IM开发入门系列文章
+  <a class="anchor" href="#%e9%9b%b6%e5%9f%ba%e7%a1%80im%e5%bc%80%e5%8f%91%e5%85%a5%e9%97%a8%e7%b3%bb%e5%88%97%e6%96%87%e7%ab%a0">#</a>
+</h3>
+<ul>
+<li>
+  <a href="http://www.52im.net/thread-3065-1-1.html">零基础IM开发入门(一)：什么是IM系统？</a></li>
+<li>
+  <a href="http://www.52im.net/thread-3143-1-1.html">零基础IM开发入门(二)：什么是IM系统的实时性？</a></li>
+<li>
+  <a href="http://www.52im.net/thread-3182-1-1.html">零基础IM开发入门(三)：什么是IM系统的可靠性？</a></li>
+<li>
+  <a href="http://www.52im.net/thread-3189-1-1.html">零基础IM开发入门(四)：什么是IM系统的消息时序一致性？</a></li>
+<li>
+  <a href="/note/">零基础IM开发入门(五)：什么是IM系统的安全性？</a></li>
+<li>
+  <a href="/note/">零基础IM开发入门(六)：什么是IM系统的的心跳机制？</a></li>
+<li>
+  <a href="/note/">零基础IM开发入门(七)：如何理解并实现IM系统消息未读数？</a></li>
+<li>
+  <a href="/note/">零基础IM开发入门(八)：如何理解并实现IM系统的多端消息漫游？</a></li>
+</ul>
+<h3 id="唯一消息id相关">
+  唯一消息ID相关
+  <a class="anchor" href="#%e5%94%af%e4%b8%80%e6%b6%88%e6%81%afid%e7%9b%b8%e5%85%b3">#</a>
+</h3>
+<ul>
+<li>
+  <a href="http://www.52im.net/thread-1998-1-1.html">IM消息ID技术专题(一)：微信的海量IM聊天消息序列号生成实践（算法原理篇）</a></li>
+<li>
+  <a href="http://www.52im.net/thread-1999-1-1.html">IM消息ID技术专题(二)：微信的海量IM聊天消息序列号生成实践（容灾方案篇）</a></li>
+<li>
+  <a href="http://www.52im.net/thread-2747-1-1.html">IM消息ID技术专题(三)：解密融云IM产品的聊天消息ID生成策略</a></li>
+<li>
+  <a href="http://www.52im.net/thread-2751-1-1.html">IM消息ID技术专题(四)：深度解密美团的分布式ID生成算法</a></li>
+<li>
+  <a href="http://www.52im.net/thread-2953-1-1.html">IM消息ID技术专题(五)：开源分布式ID生成器UidGenerator的技术实现</a></li>
+<li>
+  <a href="http://www.52im.net/thread-3129-1-1.html">IM消息ID技术专题(六)：深度解密滴滴的高性能ID生成器(Tinyid)</a></li>
+</ul></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/note"
+issue-term="pathname"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#零基础im开发入门系列文章">零基础IM开发入门系列文章</a></li>
+            <li><a href="#唯一消息id相关">唯一消息ID相关</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

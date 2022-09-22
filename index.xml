@@ -5,17 +5,15 @@
     <link>https://jageros.github.io/note/</link>
     <description>Recent content in Introduction on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>单反相机入门基础知识</title>
-      <link>https://jageros.github.io/note/docs/life/camera/</link>
-      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <title>IM系统架构学习文献</title>
+      <link>https://jageros.github.io/note/docs/imsys/material/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jageros.github.io/note/docs/life/camera/</guid>
+      <guid>https://jageros.github.io/note/docs/imsys/material/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一个叫单反相机，一个叫微单相机，只差两个字，但是结构却天差万别。单反相机从胶片时代就已经盛行，来到数码时代更是风生水起。微单相机实际上从2009年才诞生，是相机全面电子化的产物。
-单反相机之所以称之为单反，是因为它内部有一个反光板，并且快门也是机械机构，高端机型还配备了五棱镜取景。正是如此，单反相机的快门速度有局限性，最大为1/8000秒。取景时观看的和肉眼一致。
-微单相机完全的电子化，没有反光板、没有机械快门、没有五棱镜，电子取景器和屏幕取景都是所见即所得。正式因为电子结构，因此连拍速度、快门速度突破了单反的局限，同时视频的性能更加卓越。&lt;/p&gt;
+&lt;p&gt;来自IM即使通信网的一些IM系统架构学习的博客&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -29,40 +27,6 @@
 &lt;p&gt;&amp;ldquo;github.com/spf13/viper&amp;quot;是一个支持读取toml，yaml， ini， json，hcl等格式配置文件的golang库，
 本文通过使用该库配合&amp;quot;github.com/spf13/pflag&amp;quot;和&amp;quot;github.com/fsnotify/fsnotify&amp;quot;库实现从配置文件和启动参数对服务进行配置，
 并实现监听配置文件的实时改动，从而可实现不停服更新配置&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>狼人对决项目方案</title>
-      <link>https://jageros.github.io/note/docs/scheme/werewolf/</link>
-      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/scheme/werewolf/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;狼人对决微信小程序实践项目方案书&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>风水入门知识</title>
-      <link>https://jageros.github.io/note/docs/geomancy/basics/</link>
-      <pubDate>Fri, 27 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/geomancy/basics/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;风水从古至今已延续千年，无论是房屋风水、办公室风水和阴宅风水，对我们的运势都有一定的影响。
-好的风水不仅是在心理上给我们带来好的安慰，还能够在现实生活中真实的体会到风水的作用。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>基金数据分析</title>
-      <link>https://jageros.github.io/note/docs/fund/funds/</link>
-      <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/fund/funds/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;爬取天天基金网的规模超过10亿的被动型（指数型）股票基金的数据，并按规模由大到小排序&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -102,17 +66,6 @@
     </item>
     
     <item>
-      <title>其他记录</title>
-      <link>https://jageros.github.io/note/docs/other/mac/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/other/mac/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;其他杂乱的操作记录，供必要时查阅&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>参考博客文献</title>
       <link>https://jageros.github.io/note/docs/material/reference/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
@@ -120,18 +73,6 @@
       <guid>https://jageros.github.io/note/docs/material/reference/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;本文收集一下博客文献的链接，供学习参考&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>面经</title>
-      <link>https://jageros.github.io/note/docs/interview/interview/</link>
-      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/interview/interview/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;这里记录2020年5月以来的面试经历，主要是一些技术相关的面试问答，如没有答案的可根据问题自行百度答案，
-后续会不断补充完整&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -285,17 +226,6 @@ Lucene 可以说是当下最先进、高性能、全功能的搜索引擎库—�
 &lt;p&gt;需求：生成x个随机数，要求这个x个随机数的和为y， 且随机数的最大值小于平均数的3倍，最小值大于0，例如：5个和为10的随机数避免出现6，1，1，1，1的情况。
 【使用场景：游戏中卡牌包开包时随机出现卡牌质量的分布】&lt;br&gt;
 本文展示go语言对该算法的实现&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>零碎笔记</title>
-      <link>https://jageros.github.io/note/docs/golang/other-recode/</link>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/golang/other-recode/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文记录一些golang程序的一些简短的要点&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

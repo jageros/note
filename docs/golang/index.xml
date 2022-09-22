@@ -101,16 +101,5 @@
 &lt;/blockquote&gt;</description>
     </item>
     
-    <item>
-      <title>零碎笔记</title>
-      <link>https://jageros.github.io/note/docs/golang/other-recode/</link>
-      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jageros.github.io/note/docs/golang/other-recode/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文记录一些golang程序的一些简短的要点&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
   </channel>
 </rss>
