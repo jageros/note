@@ -5,7 +5,20 @@
     <link>https://jageros.github.io/note/</link>
     <description>Recent content in Introduction on Jager&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我想把我写给你</title>
+      <link>https://jageros.github.io/note/docs/yingzi/camera/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/yingzi/camera/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;一个叫单反相机，一个叫微单相机，只差两个字，但是结构却天差万别。单反相机从胶片时代就已经盛行，来到数码时代更是风生水起。微单相机实际上从2009年才诞生，是相机全面电子化的产物。
+单反相机之所以称之为单反，是因为它内部有一个反光板，并且快门也是机械机构，高端机型还配备了五棱镜取景。正是如此，单反相机的快门速度有局限性，最大为1/8000秒。取景时观看的和肉眼一致。
+微单相机完全的电子化，没有反光板、没有机械快门、没有五棱镜，电子取景器和屏幕取景都是所见即所得。正式因为电子结构，因此连拍速度、快门速度突破了单反的局限，同时视频的性能更加卓越。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>IM系统架构学习文献</title>
       <link>https://jageros.github.io/note/docs/imsys/material/</link>
@@ -14,6 +27,30 @@
       <guid>https://jageros.github.io/note/docs/imsys/material/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;来自IM即使通信网的一些IM系统架构学习的博客&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>股票知识</title>
+      <link>https://jageros.github.io/note/docs/life/stock/</link>
+      <pubDate>Thu, 18 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/life/stock/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;股票买卖要点记录&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>单反相机入门基础知识</title>
+      <link>https://jageros.github.io/note/docs/life/camera/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/life/camera/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;一个叫单反相机，一个叫微单相机，只差两个字，但是结构却天差万别。单反相机从胶片时代就已经盛行，来到数码时代更是风生水起。微单相机实际上从2009年才诞生，是相机全面电子化的产物。
+单反相机之所以称之为单反，是因为它内部有一个反光板，并且快门也是机械机构，高端机型还配备了五棱镜取景。正是如此，单反相机的快门速度有局限性，最大为1/8000秒。取景时观看的和肉眼一致。
+微单相机完全的电子化，没有反光板、没有机械快门、没有五棱镜，电子取景器和屏幕取景都是所见即所得。正式因为电子结构，因此连拍速度、快门速度突破了单反的局限，同时视频的性能更加卓越。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -242,6 +279,17 @@ Kubernetes的目标是让部署容器化的应用简单并且高效（powerful�
 Kubernetes提供了应用部署，规划，更新，维护的一种机制。
 本文将介绍Kubernetes集群的部署步骤&lt;/p&gt;
 &lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jageros.github.io/note/docs/git/git-flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/git/git-flow/</guid>
+      <description>Git Flow 模型以及工具的使用 #  Git Flow 是什么？ #   2010 年 5 月，在一篇名为 “ A successful Git branching model” 的博文中，Vincent Driessen 介绍了一种构建在 Git 之上的软件开发模型。通过利用 Git 创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上，实现了软件开发过程不同阶段的相互隔离。这种软件开发的活动模型被 Vincent 称为 “Git Flow”
+ Git Flow 流程图 #  这是 Vincent 博文中的 Git FLow 流程图：从右向左看，从上到下看。
+ Git Flow Branches #   Git Flow 的核心就是 Branch，通过在项目的不同阶段对 Branch 的不同操作（包括但不限于 create、merge、rebase 等）来实现一个完整的高效率的工作流程。Git Flow Branches 主要分为两大类：Main Branchs（主分支） 和 Supporting branches（辅助分支）。 其中 Main Branchs 中又包含了 Master 和 Develop，而 Supporting branches 中包含了 Feature、Release、Hotfix 以及其他自定义分支</description>
     </item>
     
   </channel>

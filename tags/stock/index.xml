@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stock on Jager&#39;s Note</title>
+    <link>https://jageros.github.io/note/tags/stock/</link>
+    <description>Recent content in stock on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 18 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jageros.github.io/note/tags/stock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>股票知识</title>
+      <link>https://jageros.github.io/note/docs/life/stock/</link>
+      <pubDate>Thu, 18 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/life/stock/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;股票买卖要点记录&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Jager&#39;s Note</title>
+    <link>https://jageros.github.io/note/docs/git/</link>
+    <description>Recent content in git on Jager&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jageros.github.io/note/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://jageros.github.io/note/docs/git/git-flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jageros.github.io/note/docs/git/git-flow/</guid>
+      <description>Git Flow 模型以及工具的使用 #  Git Flow 是什么？ #   2010 年 5 月，在一篇名为 “ A successful Git branching model” 的博文中，Vincent Driessen 介绍了一种构建在 Git 之上的软件开发模型。通过利用 Git 创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上，实现了软件开发过程不同阶段的相互隔离。这种软件开发的活动模型被 Vincent 称为 “Git Flow”
+ Git Flow 流程图 #  这是 Vincent 博文中的 Git FLow 流程图：从右向左看，从上到下看。
+ Git Flow Branches #   Git Flow 的核心就是 Branch，通过在项目的不同阶段对 Branch 的不同操作（包括但不限于 create、merge、rebase 等）来实现一个完整的高效率的工作流程。Git Flow Branches 主要分为两大类：Main Branchs（主分支） 和 Supporting branches（辅助分支）。 其中 Main Branchs 中又包含了 Master 和 Develop，而 Supporting branches 中包含了 Feature、Release、Hotfix 以及其他自定义分支</description>
+    </item>
+    
+  </channel>
+</rss>

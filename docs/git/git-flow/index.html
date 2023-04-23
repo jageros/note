@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Git Flow 模型以及工具的使用 #  Git Flow 是什么？ #   2010 年 5 月，在一篇名为 “ A successful Git branching model” 的博文中，Vincent Driessen 介绍了一种构建在 Git 之上的软件开发模型。通过利用 Git 创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上，实现了软件开发过程不同阶段的相互隔离。这种软件开发的活动模型被 Vincent 称为 “Git Flow”
+ Git Flow 流程图 #  这是 Vincent 博文中的 Git FLow 流程图：从右向左看，从上到下看。
+ Git Flow Branches #   Git Flow 的核心就是 Branch，通过在项目的不同阶段对 Branch 的不同操作（包括但不限于 create、merge、rebase 等）来实现一个完整的高效率的工作流程。Git Flow Branches 主要分为两大类：Main Branchs（主分支） 和 Supporting branches（辅助分支）。 其中 Main Branchs 中又包含了 Master 和 Develop，而 Supporting branches 中包含了 Feature、Release、Hotfix 以及其他自定义分支">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Git Flow 模型以及工具的使用 #  Git Flow 是什么？ #   2010 年 5 月，在一篇名为 “ A successful Git branching model” 的博文中，Vincent Driessen 介绍了一种构建在 Git 之上的软件开发模型。通过利用 Git 创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上，实现了软件开发过程不同阶段的相互隔离。这种软件开发的活动模型被 Vincent 称为 “Git Flow”
+ Git Flow 流程图 #  这是 Vincent 博文中的 Git FLow 流程图：从右向左看，从上到下看。
+ Git Flow Branches #   Git Flow 的核心就是 Branch，通过在项目的不同阶段对 Branch 的不同操作（包括但不限于 create、merge、rebase 等）来实现一个完整的高效率的工作流程。Git Flow Branches 主要分为两大类：Main Branchs（主分支） 和 Supporting branches（辅助分支）。 其中 Main Branchs 中又包含了 Master 和 Develop，而 Supporting branches 中包含了 Feature、Release、Hotfix 以及其他自定义分支" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jageros.github.io/note/docs/git/git-flow/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Git Flow | Jager&#39;s Note</title>
+<link rel="manifest" href="/note/manifest.json">
+<link rel="icon" href="/note/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/note/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/note/flexsearch.min.js"></script>
+  <script defer src="/note/en.search.min.52b9bfd1aa40949f999cd907f495dd2ebf2a30bbdc634b7cc1cb5e98f11c7042.js" integrity="sha256-Urm/0apAlJ&#43;ZnNkH9JXdLr8qMLvcY0t8wctemPEccEI=" crossorigin="anonymous"></script>
+
+  <script defer src="/note/sw.min.4bb0a7c3ceb8eb699335ae168b1ce1699c0dfd35743b4318c4ae80fe6359ad42.js" integrity="sha256-S7Cnw86462mTNa4WixzhaZwN/TV0O0MYxK6A/mNZrUI=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/note/"><span>Jager&#39;s Note</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ae1a891fb3a3f71d71273fc61b29b76" class="toggle"  />
+    <label for="section-6ae1a891fb3a3f71d71273fc61b29b76" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/linux/" class="">Linux</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/linux/operate-recode/" class="">Linux不常用操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-365aea7c1bb9b13879d76e6d87869a68" class="toggle"  />
+    <label for="section-365aea7c1bb9b13879d76e6d87869a68" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/golang/" class="">Go语言笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/viper/" class="">viper配置示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/go-pkg/" class="">go第三方库列表</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/channel/" class="">channel注意事项</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/sync/" class="">golang sync包的使用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/study-line/" class="">go服务端开发学习指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/grace-exit/" class="">go程序优雅退出</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/eventhub/" class="">go程序发布监听事件库</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/golang/queue/" class="">queue golang实现</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/database/" class="">数据库相关</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/database/mongodb/" class="">MongoDB的一些操作记录</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f55a7674027409a03b8a5abb4bc297a8" class="toggle"  />
+    <label for="section-f55a7674027409a03b8a5abb4bc297a8" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/nginx/" class="">Nginx</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginxop/" class="">Nginx命令操作记录</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/nginx-limit/" class="">Nginx IP 限流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/nginx/proxy/" class="">nginx反向代理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-49329833618cf26156c77f35cef1c5a2" class="toggle"  />
+    <label for="section-49329833618cf26156c77f35cef1c5a2" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/elasticsearch/" class="">Elasticsearch</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/elasticsearch/elasticsearch-install/" class="">Elasticsearch部署</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87f45e72e9046a94302e37ea137e2a5c" class="toggle"  />
+    <label for="section-87f45e72e9046a94302e37ea137e2a5c" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/kubernetes/kubernetes-setup/" class="">Kubernetes服务部署步骤</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-353f7a5578fa41dbc42c73ea30fe2255" class="toggle"  />
+    <label for="section-353f7a5578fa41dbc42c73ea30fe2255" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/algorithm/" class="">算法知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/algorithm/random-n-int/" class="">生成x个随机数</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="toggle"  />
+    <label for="section-9f0c33c6c213ccb5fe71280fe3c278ea" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/interview/" class="">面试相关笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/plan/" class="">面试准备</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/interview/faq/" class="">面试灵魂拷问</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c491ef2d3236e510d8223043b6cb170f" class="toggle"  />
+    <label for="section-c491ef2d3236e510d8223043b6cb170f" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/material/" class="">学习资料</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/material/reference/" class="">参考博客文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df0032c292233614eb120498739e8356" class="toggle"  />
+    <label for="section-df0032c292233614eb120498739e8356" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/other/" class="">其他笔记</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-16266eaeb0d05f9cd03b5dcee3d3fab7" class="toggle"  />
+    <label for="section-16266eaeb0d05f9cd03b5dcee3d3fab7" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/imsys/" class="">IM系统架构</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/imsys/material/" class="">IM系统架构学习文献</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/life/" class="">生活日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/life/stock/" class="">股票知识</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/life/camera/" class="">单反相机入门基础知识</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-67d27e1a8d86ba193c16cb332eedc1db" class="toggle" checked />
+    <label for="section-67d27e1a8d86ba193c16cb332eedc1db" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/git/git-flow/" class=" active">Git Flow</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2aa7a398b8823e8a70ac9b25997a18a9" class="toggle"  />
+    <label for="section-2aa7a398b8823e8a70ac9b25997a18a9" class="flex justify-between">
+      <a href="https://jageros.github.io/note/docs/yingzi/" class="">宝宝日志</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jageros.github.io/note/docs/yingzi/camera/" class="">我想把我写给你</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/jageros" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://blog.csdn.net/lhj_168" target="_blank" rel="noopener">
+        CSDN
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/note/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Git Flow</strong>
+
+  <label for="toc-control">
+    
+    <img src="/note/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#git-flow-模型以及工具的使用">Git Flow 模型以及工具的使用</a>
+      <ul>
+        <li><a href="#git-flow-是什么">Git Flow 是什么？</a></li>
+        <li><a href="#git-flow-流程图">Git Flow 流程图</a></li>
+        <li><a href="#git-flow-branches">Git Flow Branches</a></li>
+        <li><a href="#master">Master</a></li>
+        <li><a href="#develop">Develop</a></li>
+        <li><a href="#feature">Feature</a></li>
+        <li><a href="#release">Release</a></li>
+        <li><a href="#hotfix">Hotfix</a></li>
+        <li><a href="#git-flow-工具">Git Flow 工具</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="git-flow-模型以及工具的使用">
+  Git Flow 模型以及工具的使用
+  <a class="anchor" href="#git-flow-%e6%a8%a1%e5%9e%8b%e4%bb%a5%e5%8f%8a%e5%b7%a5%e5%85%b7%e7%9a%84%e4%bd%bf%e7%94%a8">#</a>
+</h1>
+<h2 id="git-flow-是什么">
+  Git Flow 是什么？
+  <a class="anchor" href="#git-flow-%e6%98%af%e4%bb%80%e4%b9%88">#</a>
+</h2>
+<blockquote>
+<p>2010 年 5 月，在一篇名为 “
+  <a href="https://link.zhihu.com/?target=https%3A//nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>” 的博文中，Vincent Driessen 介绍了一种构建在 Git 之上的软件开发模型。<strong>通过利用 Git 创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上，实现了软件开发过程不同阶段的相互隔离</strong>。这种软件开发的活动模型被 Vincent 称为 “Git Flow”</p>
+</blockquote>
+<h2 id="git-flow-流程图">
+  Git Flow 流程图
+  <a class="anchor" href="#git-flow-%e6%b5%81%e7%a8%8b%e5%9b%be">#</a>
+</h2>
+<p>这是 Vincent 博文中的 Git FLow 流程图：从右向左看，从上到下看。</p>
+<p>
+  <img src="https://pic1.zhimg.com/80/v2-e8760693b84f58998da747e0bdaf1690_1440w.jpg" alt="img" /></p>
+<h2 id="git-flow-branches">
+  Git Flow Branches
+  <a class="anchor" href="#git-flow-branches">#</a>
+</h2>
+<blockquote>
+<p>Git Flow 的核心就是 <strong>Branch</strong>，通过在项目的不同阶段对 Branch 的不同操作（包括但不限于 create、merge、rebase 等）来实现一个完整的高效率的工作流程。Git Flow Branches 主要分为两大类：<strong>Main Branchs（主分支）</strong> 和 <strong>Supporting branches（辅助分支）</strong>。 其中 Main Branchs 中又包含了 <strong>Master</strong> 和 <strong>Develop</strong>，而 Supporting branches 中包含了 <strong>Feature</strong>、<strong>Release</strong>、<strong>Hotfix</strong> 以及其他自定义分支</p>
+</blockquote>
+<h2 id="master">
+  Master
+  <a class="anchor" href="#master">#</a>
+</h2>
+<ul>
+<li><strong>master 分支上存放的是最稳定的正式版本</strong>，并且该分支的代码应该是随时可在生产环境中使用的代码（<strong>Production Ready state</strong>）。当一个版本开发完毕后，产生了一份新的稳定的可供发布的代码时，master 分支上的代码要被更新。同时，每一次更新，都需要在 master 上打上对应的版本号（tag）</li>
+<li><strong>任何人不允许在 master 上进行代码的直接提交，只接受其他分支的合入</strong>。原则上 master 上的代码必须是合并自经过多轮测试且已经发布一段时间且线上稳定的 release 分支（预发分支）</li>
+</ul>
+<h2 id="develop">
+  Develop
+  <a class="anchor" href="#develop">#</a>
+</h2>
+<ul>
+<li><strong>develop 分支是主开发分支，其上更新的代码始终反映着下一个发布版本需要交付的新功能</strong>。当 develop 分支到达一个稳定的点并准备好发布时，应该从该点拉取一个 release 分支并附上发布版本号。也有人称 develop 分支为 “integration branch”，因为会基于该分支和持续集成工具做自动化的 Nightly builds</li>
+<li>develop 分支接受其他 Supporting branches 分支的合入，最常见的就是 feature 分支，开发一个新功能时拉取新的 feature 分支，开发完成后再并入 develop 分支。需要注意的是，<strong>合入 develop 的分支必须保证功能完整，不影响 develop 分支的正常运行</strong>。</li>
+</ul>
+<h2 id="feature">
+  Feature
+  <a class="anchor" href="#feature">#</a>
+</h2>
+<ul>
+<li>feature 分支又叫做功能分支，一般命名为 feature/xxx，用于<strong>开发即将发布版本或未来版本的新功能或者探索新功能</strong>。该分支通常存在于开发人员的本地代码库而不要求提交到远程代码库上，除非几个人合作在同一个 feature 分支开发。关于这点，ThoughtWorks 洞见上有一篇文章 “
+  <a href="https://link.zhihu.com/?target=https%3A//insights.thoughtworks.cn/gitflow-consider-harmful/">Gitflow 有害论</a>” 做了非常有意思的阐述，文章下的评论也异常激烈。也许该文章的名字可能有失偏颇，但文章的本意以及评论传达了一个观点：<strong>feature 分支要求足够细粒度以避免成为 long-lived branch，应当小步小步 merge 而不是一次 merge 大量代码</strong></li>
+<li>feature 分支只能拉取自 develop 分支，开发完成后要么合并回 develop 分支，要么因为新功能的尝试不如人意而直接丢弃</li>
+</ul>
+<h2 id="release">
+  Release
+  <a class="anchor" href="#release">#</a>
+</h2>
+<ul>
+<li>release 分支又叫做预发分支，一般命名为 release/1.2（后面是版本号），<strong>该分支专为测试—发布新的版本而开辟，允许做小量级的 Bug 修复和准备发布版本的元数据信息（版本号、编译时间等）</strong>。通过创建 release 分支，使得 develop 分支得以空闲出来接受下一个版本的新的 feature 分支的合入</li>
+<li>release 分支需要提交到服务器上，交由 QA 进行测试，并由 Dev 修复 Bug。同时根据该分支的特性我们可以部署自动化测试以及生产环境代码的自动化更新和部署</li>
+<li>release 分支只能拉取自 develop 分支，合并回 develop 和 master 分支</li>
+</ul>
+<h2 id="hotfix">
+  Hotfix
+  <a class="anchor" href="#hotfix">#</a>
+</h2>
+<ul>
+<li>hotfix 分支又叫热修复分支，一般命名为 hotfix/1.2.1（后面是版本号），<strong>当生产环境的代码（master 上代码）遇到了严重到必须立即修复的缺陷时，就需要从 master 分支上指定的 tag 版本（比如 1.2）拉取 hotfix 分支进行代码的紧急修复，并附上版本号（比如 1.2.1）</strong>。这样做的好处是不会打断正在进行的 develop 分支的开发工作，能够让团队中负责 feature 开发的人与负责 hotfix 的人并行、独立的开展工作</li>
+<li>hotfix 分支只能从 master 上拉取，测试通过后合并回 master 分支和 develop 分支</li>
+</ul>
+<h2 id="git-flow-工具">
+  Git Flow 工具
+  <a class="anchor" href="#git-flow-%e5%b7%a5%e5%85%b7">#</a>
+</h2>
+<blockquote>
+<p>一旦使用 Git Flow 模型，那么对分支的命令操作必然是频繁且重复的，所幸是有人开发了 Git Flow Script 工具帮助我们简化命令，
+  <a href="https://link.zhihu.com/?target=https%3A//github.com/nvie/gitflow">GitHub官网</a></p>
+</blockquote>
+<ul>
+<li>安装</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">// OS X 
+brew install git-flow
+
+// Windows 
+wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash ``` 
+</code></pre></div><ul>
+<li>使用<code>git flow init</code>进行初始化，会询问你分支的命名，使用默认的即可。初始化完成后自动切换到了 develop 分支</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">➜  demo git:(master) ✗ git flow init
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master] 
+Branch name for &#34;next release&#34; development: [develop] 
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? []
+
+➜  demo git:(develop) ✗ 
+</code></pre></div><ul>
+<li>下面使用 feature 分支演示 Git Flow 功能。<code>git flow feature start my-feature</code>该命令用于新建一个 feature 分支。可以看到，基于 develop 的 feature/my-feature 分支已被创建，并且自动切换到该分支</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">➜  demo git:(develop) ✗ git flow feature start my-feature
+Switched to a new branch &#39;feature/my-feature&#39;
+
+Summary of actions:
+- A new branch &#39;feature/my-feature&#39; was created, based on &#39;develop&#39;
+- You are now on branch &#39;feature/my-feature&#39;
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish my-feature
+
+➜  demo git:(feature/my-feature) ✗ 
+</code></pre></div><ul>
+<li><code>git flow feature finish my-feature</code>该命令用于将 feature/my-feature 分支合并入 develop 分支并删除该分支。此时已切换到了 develop 分支</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">➜  demo git:(feature/my-feature) git flow feature finish my-feature
+Switched to branch &#39;develop&#39;
+Updating 6c6e4cb..345a380
+Fast-forward
+ a.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 a.txt
+Deleted branch feature/my-feature (was 345a380).
+
+Summary of actions:
+- The feature branch &#39;feature/my-feature&#39; was merged into &#39;develop&#39;
+- Feature branch &#39;feature/my-feature&#39; has been removed
+- You are now on branch &#39;develop&#39;
+
+➜  demo git:(develop) 
+</code></pre></div><ul>
+<li>release 和 hotfix 的命令使用和 feature 一样。需要注意的是它们实际的操作细节会有一些区别，比如 release finish 时会打上版本号，以及合并入 master 和 develop 两个分支</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">➜  demo git:(release/1.2) git flow release finish 1.2 
+...
+
+Summary of actions:
+- Latest objects have been fetched from &#39;origin&#39;
+- Release branch has been merged into &#39;master&#39;
+- The release was tagged &#39;1.2&#39;
+- Release branch has been back-merged into &#39;develop&#39;
+- Release branch &#39;release/1.2&#39; has been deleted
+
+➜  demo git:(master) ``` 
+</code></pre></div><ul>
+<li>还有将分支 push 到远程代码仓库和拉取远程代码仓库分支的命令</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">➜  demo git:(release/1.2) git flow release publish 1.2 
+➜  demo git:(release/1.2) git flow release pull 1.2 
+</code></pre></div><h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<blockquote>
+<p>Git Flow 模型通过不同的分支从源代码管理的角度对软件开发活动进行了约束，为我们的软件开发提供了一个可供参考的管理模型。Git Flow 模型让代码仓库保持整洁，让小组各个成员之间的开发相互隔离，能够有效避免处于开发状态中的代码相互影响而导致的效率低下和混乱。但同时，不同的开发团队存在不同的文化，在不同的项目背景情况下都可能<strong>根据该模型进行适当的精简或扩充</strong>。</p>
+</blockquote>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li>
+  <a href="https://link.zhihu.com/?target=https%3A//nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model —— Vincent Driessen</a></li>
+<li>
+  <a href="https://link.zhihu.com/?target=https%3A//juejin.im/entry/5b7fe2745188253010325bf6">Git Flow流程 —— 掘金</a></li>
+<li>
+  <a href="https://link.zhihu.com/?target=http%3A//deshui.wang/%E6%95%8F%E6%8D%B7/2015/10/27/sourcecode-management">敏捷实践系列(四)：代码管理流程</a></li>
+<li>
+  <a href="https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/36292d36e41d">Git Flow的使用 —— 简书</a></li>
+<li>
+  <a href="https://link.zhihu.com/?target=https%3A//insights.thoughtworks.cn/gitflow-consider-harmful/">Git Flow有害论 —— ThoughtWorks洞见</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+
+  <h2 id="rewardcode" style="color:#d0021b">
+      大侠的赏赐，是我持续创作的动力，感谢！ 
+  </h2>
+
+  <div style="width:100%; text-align:center;">
+	  <div style="width:100%;text-align: center;">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxgzh.jpg" style="width:200px;height:200px;float:left;" alt="微信公众号">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/wxds.jpg" style="width:200px;height:200px;float:center;" alt="赞赏码">
+		  <img src="https://gitee.com/jayos/imgs/raw/master/20210809/zfbds.jpg" style="width:200px;height:200px;float:right;" alt="赞赏码">
+	  </div>
+  </div>
+
+
+
+<script src="https://utteranc.es/client.js"
+repo="jageros/note"
+issue-term="pathname"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#git-flow-模型以及工具的使用">Git Flow 模型以及工具的使用</a>
+      <ul>
+        <li><a href="#git-flow-是什么">Git Flow 是什么？</a></li>
+        <li><a href="#git-flow-流程图">Git Flow 流程图</a></li>
+        <li><a href="#git-flow-branches">Git Flow Branches</a></li>
+        <li><a href="#master">Master</a></li>
+        <li><a href="#develop">Develop</a></li>
+        <li><a href="#feature">Feature</a></li>
+        <li><a href="#release">Release</a></li>
+        <li><a href="#hotfix">Hotfix</a></li>
+        <li><a href="#git-flow-工具">Git Flow 工具</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
